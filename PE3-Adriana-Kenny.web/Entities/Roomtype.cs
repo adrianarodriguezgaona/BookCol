@@ -15,10 +15,6 @@ namespace PE3_Adriana_Kenny.web.Entities
 
         [Required]
         public string Type{ get; set; }
-
-
-
-
     }
 }
 
