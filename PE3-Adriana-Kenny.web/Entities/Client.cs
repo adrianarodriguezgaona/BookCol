@@ -28,5 +28,9 @@ namespace PE3_Adriana_Kenny.web.Entities
         [Required]
         [EmailAddress]
         public string  Email { get; set; }
+
+        // navigation property
+
+        public List<Booking> Bookings { get; set; }
     }
 }
