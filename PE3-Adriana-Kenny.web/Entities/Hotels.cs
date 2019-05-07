@@ -32,5 +32,11 @@ namespace PE3_Adriana_Kenny.web.Entities
         public string Photo { get; set; }
 
         public string Description { get; set; }
+
+        // navigation property
+
+        public City City { get; set; }
+
+
     }
 }

@@ -11,7 +11,7 @@ namespace PE3_Adriana_Kenny.web.Entities
     {   
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long KlantId { get; set; }
+        public long CustomerId { get; set; }
 
         [Required]
         public string Name { get; set; }
