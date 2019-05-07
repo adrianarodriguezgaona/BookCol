@@ -13,24 +13,20 @@ namespace PE3_Adriana_Kenny.web.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long CustomerId { get; set; }
 
-        [Required]
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Address { get; set;
         }
 
-        [MaxLength(4)]
+       
         public int ZipCode { get; set; }
 
         public string Community { get; set; }
         public string Country { get; set; }
 
-        [Required]
-        [EmailAddress]
+      
         public string  Email { get; set; }
 
-        // navigation property
-
-        public List<Booking> Bookings { get; set; }
+      
     }
 }

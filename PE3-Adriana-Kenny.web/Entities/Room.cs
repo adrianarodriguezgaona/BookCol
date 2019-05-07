@@ -13,19 +13,15 @@ namespace PE3_Adriana_Kenny.web.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long RoomId { get; set; }
 
-        [Required]
         public string Description { get; set; }
 
-        [Required]
    
         public decimal PriceNight { get; set; }
 
 
-        [Required]
         public int HotelId { get; set; }
 
 
-        [Required]
         public long RoomTypeId{ get; set; }
     }
 }

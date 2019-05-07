@@ -13,22 +13,17 @@ namespace PE3_Adriana_Kenny.web.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long BookingId { get; set; }
 
-        [Required]
         public DateTime CheckInDate { get; set; }
 
-        [Required]
         public DateTime CheckOutDate { get; set; }
 
         public long CustomerId { get; set; }
 
-        [Required]
-        [MaxLength(2)]
-        public int NmbrOfPeople { get; set; }
+         public int NmbrOfPeople { get; set; }
 
         public long RoomId { get; set; }
 
-        // navigation property
+     
 
-        public Client Client { get; set; }
     }
 }
