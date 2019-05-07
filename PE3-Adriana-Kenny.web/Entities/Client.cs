@@ -15,17 +15,11 @@ namespace PE3_Adriana_Kenny.web.Entities
 
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string Address { get; set;
-        }
-       
+        public string Address { get; set; }        
         public int ZipCode { get; set; }
-
         public string Community { get; set; }
-        public string Country { get; set; }
-
-      
+        public string Country { get; set; }      
         public string  Email { get; set; }
 
-
-//  test commit    }
+   }
 }

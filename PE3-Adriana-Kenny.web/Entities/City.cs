@@ -12,12 +12,8 @@ namespace PE3_Adriana_Kenny.web.Entities
         [Key]
         [System.ComponentModel.DataAnnotations.Schema.DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long CityId { get; set; }
-
         public string Name { get; set; }
-
         public string Description { get; set; }
-
-        //test commits
-
+       
     }
 }
