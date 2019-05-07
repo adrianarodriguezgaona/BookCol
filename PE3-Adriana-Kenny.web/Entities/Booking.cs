@@ -26,5 +26,9 @@ namespace PE3_Adriana_Kenny.web.Entities
         public int NmbrOfPeople { get; set; }
 
         public long RoomId { get; set; }
+
+        // navigation property
+
+        public Client Client { get; set; }
     }
 }

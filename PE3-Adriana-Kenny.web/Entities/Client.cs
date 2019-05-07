@@ -11,7 +11,7 @@ namespace PE3_Adriana_Kenny.web.Entities
     {   
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long KlantId { get; set; }
+        public long CustomerId { get; set; }
 
         [Required]
         public string Name { get; set; }
@@ -28,5 +28,9 @@ namespace PE3_Adriana_Kenny.web.Entities
         [Required]
         [EmailAddress]
         public string  Email { get; set; }
+
+        // navigation property
+
+        public List<Booking> Bookings { get; set; }
     }
 }
