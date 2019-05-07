@@ -17,7 +17,6 @@ namespace PE3_Adriana_Kenny.web.Entities
         public string Surname { get; set; }
         public string Address { get; set;
         }
-
        
         public int ZipCode { get; set; }
 
@@ -27,6 +26,6 @@ namespace PE3_Adriana_Kenny.web.Entities
       
         public string  Email { get; set; }
 
-      
-    }
+
+//  test commit    }
 }
