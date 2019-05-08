@@ -11,7 +11,7 @@ namespace PE3_Adriana_Kenny.web.Entities
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long BookingId { get; set; }
+        public long Id { get; set; }
 
         public DateTime CheckInDate { get; set; }
 
@@ -24,7 +24,7 @@ namespace PE3_Adriana_Kenny.web.Entities
         public long RoomId { get; set; }
 
         //navigation properties
-        public Room RoomBooking { get; set; }
+        public List<Booking> RoomBookings { get; set; }
         public Client ClientBooking { get; set; }
 
 
