@@ -30,7 +30,7 @@ namespace PE3_Adriana_Kenny.web.Entities
 
         //navigation properties
         public Client Client { get; set; }
-        public List<Room> kamers { get; set; }
+        public List<Room> Rooms { get; set; }
 
     }
 }
