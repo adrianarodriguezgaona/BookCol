@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PE3_Adriana_Kenny.web.Entities
 {
-    public class Hotels
+    public class Hotel
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

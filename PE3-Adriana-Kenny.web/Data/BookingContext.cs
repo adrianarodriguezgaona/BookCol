@@ -12,7 +12,7 @@ namespace PE3_Adriana_Kenny.web.Data
         public BookingContext(DbContextOptions<BookingContext> options) : base(options)
         {
         }
-        public DbSet<Hotels> Hotels { get; set; }
+        public DbSet<Hotel> Hotels { get; set; }
         public DbSet<Booking> Booking { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Client>Clients { get; set; }
