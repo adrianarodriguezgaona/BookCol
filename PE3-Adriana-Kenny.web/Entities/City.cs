@@ -19,7 +19,7 @@ namespace PE3_Adriana_Kenny.web.Entities
 
         // navigation property
 
-        public List<Hotels> StadHotels { get; set; }
+        public List<Hotel> Hotels { get; set; }
 
     }
 }

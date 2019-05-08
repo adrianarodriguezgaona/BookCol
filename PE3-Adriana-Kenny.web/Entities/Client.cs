@@ -33,7 +33,7 @@ namespace PE3_Adriana_Kenny.web.Entities
         public string  Email { get; set; }
 
         // navigation property
-        public List<Booking> ClientBookings { get; set; }
+        public List<Booking> Bookings { get; set; }
 
     }
 }

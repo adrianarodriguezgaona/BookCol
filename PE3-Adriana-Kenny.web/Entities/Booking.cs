@@ -19,8 +19,8 @@ namespace PE3_Adriana_Kenny.web.Entities
         [DataType(DataType.Date)]
         public DateTime CheckOutDate { get; set; }
 
-        [ForeignKey("Customer")]
-        public long CustomerId { get; set; }
+        [ForeignKey("Client")]
+        public long ClientId { get; set; }
 
         [MaxLength(1)]
          public int NmbrOfPeople { get; set; }
@@ -29,8 +29,9 @@ namespace PE3_Adriana_Kenny.web.Entities
         public long RoomId { get; set; }
 
         //navigation properties
-        public List<Booking> RoomBookings { get; set; }
-        public Client ClientBooking { get; set; }
+        public List<Booking> Bookings { get; set; }
+        public Client Client { get; set; }
+        public Room RoomBooking { get; set; }
 
 
 
