@@ -14,6 +14,10 @@ namespace PE3_Adriana_Kenny.web.Entities
         public long CityId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-       
+
+        // navigation property
+
+        public List<Hotels> StadHotels { get; set; }
+
     }
 }
