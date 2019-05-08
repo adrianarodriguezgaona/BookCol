@@ -13,12 +13,23 @@ namespace PE3_Adriana_Kenny.web.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
 
+        [Required]
         public string Name { get; set; }
         public string Surname { get; set; }
+
+        [Required]
         public string Address { get; set; }        
+
+        [Required]
         public int ZipCode { get; set; }
+
+        [Required]
         public string Community { get; set; }
-        public string Country { get; set; }      
+
+        [Required]
+        public string Country { get; set; }
+        
+        [Required]
         public string  Email { get; set; }
 
         // navigation property

@@ -11,7 +11,7 @@ namespace PE3_Adriana_Kenny.web.Entities
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long Id { get; set; }
+        public long RoomId { get; set; }
 
         public string Description { get; set; }
 
