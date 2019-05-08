@@ -11,9 +11,15 @@ namespace PE3_Adriana_Kenny.web.Entities
     {
         [Key]
         [System.ComponentModel.DataAnnotations.Schema.DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long CityId { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
+
+        [Required]
         public string Description { get; set; }
-       
+
+        // navigation property
+
+        public List<Hotels> StadHotels { get; set; }
+
     }
 }
