@@ -21,5 +21,8 @@ namespace PE3_Adriana_Kenny.web.Entities
         public string Country { get; set; }      
         public string  Email { get; set; }
 
-   }
+        // navigation property
+        public List<Booking> ClientBookings { get; set; }
+
+    }
 }

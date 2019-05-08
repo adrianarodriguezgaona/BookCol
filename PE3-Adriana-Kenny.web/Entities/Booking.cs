@@ -23,7 +23,11 @@ namespace PE3_Adriana_Kenny.web.Entities
 
         public long RoomId { get; set; }
 
-     
+        //navigation properties
+        public Room RoomBooking { get; set; }
+        public Client ClientBooking { get; set; }
+
+
 
     }
 }
