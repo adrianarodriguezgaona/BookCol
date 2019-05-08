@@ -26,7 +26,7 @@ namespace PE3_Adriana_Kenny.web.Entities
         [MaxLength(250)]
         public string Address { get; set; }
 
-        [Required]
+        [Required]  
         public int NmbrOfRooms{ get; set; }
 
         
