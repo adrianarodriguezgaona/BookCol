@@ -31,9 +31,7 @@ namespace PE3_Adriana_Kenny.web.Entities
         //navigation properties
         public List<Booking> Bookings { get; set; }
         public Client Client { get; set; }
-        public Room RoomBooking { get; set; }
-
-
+        public Room Room { get; set; }
 
     }
 }

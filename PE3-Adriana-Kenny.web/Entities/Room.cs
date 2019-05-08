@@ -24,7 +24,7 @@ namespace PE3_Adriana_Kenny.web.Entities
         [Required]
         public decimal PriceNight { get; set; }
 
-        public Hotels Hotel { get; set; }
+        public Hotel Hotel { get; set; }
         public Booking Booking { get; set; }
         public Roomtype Roomtype { get; set; }
 
