@@ -11,23 +11,33 @@ namespace PE3_Adriana_Kenny.web.Entities
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long HotelId { get; set; }
+        public long Id { get; set; }
 
+        public long CityId { get; set; }
+
+        [Required]
         public string Name { get; set; }
 
-     public int Stars { get; set; }
+        [Required]
+        [MaxLength(1)]
+        public int Stars { get; set; }
 
-        public int CityId { get; set; }
-
+        [Required]
+        [MaxLength(250)]
         public string Address { get; set; }
 
+        [Required]
         public int NmbrOfRooms{ get; set; }
 
+        
         public string Photo { get; set; }
 
+        [Required]
         public string Description { get; set; }
 
-      
+        public City City { get; set; }
+
+        public List<Room> Rooms { get; set; }
 
     }
 }

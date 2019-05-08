@@ -11,9 +11,13 @@ namespace PE3_Adriana_Kenny.web.Entities
     {
         [Key]
         [System.ComponentModel.DataAnnotations.Schema.DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long RoomTypeId { get; set; }
+        public long Id { get; set; }
 
+        [Required]
         public string Type{ get; set; }
+
+        public List<Room> Rooms { get; set; }
+
     }
 }
 
