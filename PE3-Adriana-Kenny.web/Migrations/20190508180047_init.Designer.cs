@@ -10,8 +10,8 @@ using PE3_Adriana_Kenny.web.Data;
 namespace PE3_Adriana_Kenny.web.Migrations
 {
     [DbContext(typeof(BookingContext))]
-    [Migration("20190508170538_Init")]
-    partial class Init
+    [Migration("20190508180047_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,9 +33,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
 
                     b.Property<DateTime>("CheckOutDate");
 
-                    b.Property<long?>("ClientBookingId");
-
-                    b.Property<long>("CustomerId");
+                    b.Property<long>("ClientId");
 
                     b.Property<int>("NmbrOfPeople")
                         .HasMaxLength(1);
@@ -46,7 +44,10 @@ namespace PE3_Adriana_Kenny.web.Migrations
 
                     b.HasIndex("BookingId");
 
-                    b.HasIndex("ClientBookingId");
+                    b.HasIndex("ClientId");
+
+                    b.HasIndex("RoomId")
+                        .IsUnique();
 
                     b.ToTable("Booking");
                 });
@@ -97,63 +98,75 @@ namespace PE3_Adriana_Kenny.web.Migrations
                     b.ToTable("Clients");
                 });
 
-            modelBuilder.Entity("PE3_Adriana_Kenny.web.Entities.Hotels", b =>
+            modelBuilder.Entity("PE3_Adriana_Kenny.web.Entities.Hotel", b =>
                 {
-                    b.Property<long>("HotelId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Address");
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(250);
 
-                    b.Property<int>("CityId");
+                    b.Property<long>("CityId");
 
-                    b.Property<long?>("CityId1");
+                    b.Property<string>("Description")
+                        .IsRequired();
 
-                    b.Property<string>("Description");
-
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.Property<int>("NmbrOfRooms");
 
                     b.Property<string>("Photo");
 
-                    b.Property<int>("Stars");
+                    b.Property<int>("Stars")
+                        .HasMaxLength(1);
 
-                    b.HasKey("HotelId");
+                    b.HasKey("Id");
 
-                    b.HasIndex("CityId1");
+                    b.HasIndex("CityId");
 
                     b.ToTable("Hotels");
                 });
 
             modelBuilder.Entity("PE3_Adriana_Kenny.web.Entities.Room", b =>
                 {
-                    b.Property<long>("RoomId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Description");
+                    b.Property<long>("BookingId");
 
-                    b.Property<int>("HotelId");
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(350);
+
+                    b.Property<long>("HotelId");
 
                     b.Property<decimal>("PriceNight");
 
-                    b.Property<long>("RoomTypeId");
+                    b.Property<long>("RoomtypeId");
 
-                    b.HasKey("RoomId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("HotelId");
+
+                    b.HasIndex("RoomtypeId");
 
                     b.ToTable("Rooms");
                 });
 
             modelBuilder.Entity("PE3_Adriana_Kenny.web.Entities.Roomtype", b =>
                 {
-                    b.Property<long>("RoomTypeId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Type");
+                    b.Property<string>("Type")
+                        .IsRequired();
 
-                    b.HasKey("RoomTypeId");
+                    b.HasKey("Id");
 
                     b.ToTable("Roomtypes");
                 });
@@ -161,19 +174,39 @@ namespace PE3_Adriana_Kenny.web.Migrations
             modelBuilder.Entity("PE3_Adriana_Kenny.web.Entities.Booking", b =>
                 {
                     b.HasOne("PE3_Adriana_Kenny.web.Entities.Booking")
-                        .WithMany("RoomBookings")
+                        .WithMany("Bookings")
                         .HasForeignKey("BookingId");
 
-                    b.HasOne("PE3_Adriana_Kenny.web.Entities.Client", "ClientBooking")
-                        .WithMany("ClientBookings")
-                        .HasForeignKey("ClientBookingId");
+                    b.HasOne("PE3_Adriana_Kenny.web.Entities.Client", "Client")
+                        .WithMany("Bookings")
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("PE3_Adriana_Kenny.web.Entities.Room", "Room")
+                        .WithOne("Booking")
+                        .HasForeignKey("PE3_Adriana_Kenny.web.Entities.Booking", "RoomId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("PE3_Adriana_Kenny.web.Entities.Hotels", b =>
+            modelBuilder.Entity("PE3_Adriana_Kenny.web.Entities.Hotel", b =>
                 {
-                    b.HasOne("PE3_Adriana_Kenny.web.Entities.City")
-                        .WithMany("StadHotels")
-                        .HasForeignKey("CityId1");
+                    b.HasOne("PE3_Adriana_Kenny.web.Entities.City", "City")
+                        .WithMany("Hotels")
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("PE3_Adriana_Kenny.web.Entities.Room", b =>
+                {
+                    b.HasOne("PE3_Adriana_Kenny.web.Entities.Hotel", "Hotel")
+                        .WithMany("Rooms")
+                        .HasForeignKey("HotelId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("PE3_Adriana_Kenny.web.Entities.Roomtype", "Roomtype")
+                        .WithMany("Rooms")
+                        .HasForeignKey("RoomtypeId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

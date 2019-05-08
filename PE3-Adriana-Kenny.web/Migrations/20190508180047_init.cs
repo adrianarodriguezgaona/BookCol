@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PE3_Adriana_Kenny.web.Migrations
 {
-    public partial class Init : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -42,58 +42,70 @@ namespace PE3_Adriana_Kenny.web.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Rooms",
-                columns: table => new
-                {
-                    RoomId = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Description = table.Column<string>(nullable: true),
-                    PriceNight = table.Column<decimal>(nullable: false),
-                    HotelId = table.Column<int>(nullable: false),
-                    RoomTypeId = table.Column<long>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Rooms", x => x.RoomId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Roomtypes",
                 columns: table => new
                 {
-                    RoomTypeId = table.Column<long>(nullable: false)
+                    Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Type = table.Column<string>(nullable: true)
+                    Type = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Roomtypes", x => x.RoomTypeId);
+                    table.PrimaryKey("PK_Roomtypes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Hotels",
                 columns: table => new
                 {
-                    HotelId = table.Column<long>(nullable: false)
+                    Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true),
-                    Stars = table.Column<int>(nullable: false),
-                    CityId = table.Column<int>(nullable: false),
-                    Address = table.Column<string>(nullable: true),
+                    CityId = table.Column<long>(nullable: false),
+                    Name = table.Column<string>(nullable: false),
+                    Stars = table.Column<int>(maxLength: 1, nullable: false),
+                    Address = table.Column<string>(maxLength: 250, nullable: false),
                     NmbrOfRooms = table.Column<int>(nullable: false),
                     Photo = table.Column<string>(nullable: true),
-                    Description = table.Column<string>(nullable: true),
-                    CityId1 = table.Column<long>(nullable: true)
+                    Description = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Hotels", x => x.HotelId);
+                    table.PrimaryKey("PK_Hotels", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Hotels_Cities_CityId1",
-                        column: x => x.CityId1,
+                        name: "FK_Hotels_Cities_CityId",
+                        column: x => x.CityId,
                         principalTable: "Cities",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Rooms",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    HotelId = table.Column<long>(nullable: false),
+                    BookingId = table.Column<long>(nullable: false),
+                    RoomtypeId = table.Column<long>(nullable: false),
+                    Description = table.Column<string>(maxLength: 350, nullable: false),
+                    PriceNight = table.Column<decimal>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Rooms", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Rooms_Hotels_HotelId",
+                        column: x => x.HotelId,
+                        principalTable: "Hotels",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Rooms_Roomtypes_RoomtypeId",
+                        column: x => x.RoomtypeId,
+                        principalTable: "Roomtypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -104,10 +116,9 @@ namespace PE3_Adriana_Kenny.web.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CheckInDate = table.Column<DateTime>(nullable: false),
                     CheckOutDate = table.Column<DateTime>(nullable: false),
-                    CustomerId = table.Column<long>(nullable: false),
+                    ClientId = table.Column<long>(nullable: false),
                     NmbrOfPeople = table.Column<int>(maxLength: 1, nullable: false),
                     RoomId = table.Column<long>(nullable: false),
-                    ClientBookingId = table.Column<long>(nullable: true),
                     BookingId = table.Column<long>(nullable: true)
                 },
                 constraints: table =>
@@ -120,11 +131,17 @@ namespace PE3_Adriana_Kenny.web.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Booking_Clients_ClientBookingId",
-                        column: x => x.ClientBookingId,
+                        name: "FK_Booking_Clients_ClientId",
+                        column: x => x.ClientId,
                         principalTable: "Clients",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Booking_Rooms_RoomId",
+                        column: x => x.RoomId,
+                        principalTable: "Rooms",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -133,14 +150,30 @@ namespace PE3_Adriana_Kenny.web.Migrations
                 column: "BookingId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Booking_ClientBookingId",
+                name: "IX_Booking_ClientId",
                 table: "Booking",
-                column: "ClientBookingId");
+                column: "ClientId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Hotels_CityId1",
+                name: "IX_Booking_RoomId",
+                table: "Booking",
+                column: "RoomId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Hotels_CityId",
                 table: "Hotels",
-                column: "CityId1");
+                column: "CityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Rooms_HotelId",
+                table: "Rooms",
+                column: "HotelId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Rooms_RoomtypeId",
+                table: "Rooms",
+                column: "RoomtypeId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -149,16 +182,16 @@ namespace PE3_Adriana_Kenny.web.Migrations
                 name: "Booking");
 
             migrationBuilder.DropTable(
-                name: "Hotels");
+                name: "Clients");
 
             migrationBuilder.DropTable(
                 name: "Rooms");
 
             migrationBuilder.DropTable(
-                name: "Roomtypes");
+                name: "Hotels");
 
             migrationBuilder.DropTable(
-                name: "Clients");
+                name: "Roomtypes");
 
             migrationBuilder.DropTable(
                 name: "Cities");
