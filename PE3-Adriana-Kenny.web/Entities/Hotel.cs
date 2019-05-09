@@ -9,7 +9,7 @@ namespace PE3_Adriana_Kenny.web.Entities
 {
     public class Hotel
     {
-        [Key]
+   
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
 

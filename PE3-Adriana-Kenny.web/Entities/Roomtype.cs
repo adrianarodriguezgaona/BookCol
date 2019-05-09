@@ -9,8 +9,7 @@ namespace PE3_Adriana_Kenny.web.Entities
 {
     public class Roomtype
     {
-        [Key]
-        [System.ComponentModel.DataAnnotations.Schema.DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
 
         [Required]

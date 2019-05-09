@@ -9,7 +9,8 @@ namespace PE3_Adriana_Kenny.web.Entities
 {
     public class City
     {
-        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         public long Id { get; set; }
         public string Name { get; set; }
 

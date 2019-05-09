@@ -9,7 +9,6 @@ namespace PE3_Adriana_Kenny.web.Entities
 {
     public class Client
     {   
-        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
 
