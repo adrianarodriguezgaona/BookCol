@@ -17,6 +17,8 @@ namespace PE3_Adriana_Kenny.web.Entities
         [Required]
         public string Description { get; set; }
 
+        public string Photo { get; set; }
+
         // navigation property
 
         public List<Hotel> Hotels { get; set; }

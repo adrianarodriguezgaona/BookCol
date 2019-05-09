@@ -24,6 +24,10 @@ namespace PE3_Adriana_Kenny.web.Data
 
             DataSeeder.Seed(modelBuilder);
 
+          
+
+           
+
             base.OnModelCreating(modelBuilder);
         }
     }
