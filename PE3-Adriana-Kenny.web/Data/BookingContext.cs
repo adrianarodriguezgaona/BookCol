@@ -22,6 +22,8 @@ namespace PE3_Adriana_Kenny.web.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
+            DataSeeder.Seed(modelBuilder);
+
             base.OnModelCreating(modelBuilder);
         }
     }
