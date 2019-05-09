@@ -18,17 +18,16 @@ namespace PE3_Adriana_Kenny.web.Entities
 
         [DataType(DataType.Date)]
         public DateTime CheckOutDate { get; set; }
-
-     
+    
         public long ClientId { get; set; }
+        public long RoomId { get; set; }
 
         [MaxLength(1)]
-         public int NmbrOfPeople { get; set; }
-
+        public int NmbrOfPeople { get; set; }
 
         //navigation properties
         public Client Client { get; set; }
-        public List<Room> Rooms { get; set; }
+        public Room Room { get; set; }
 
     }
 }
