@@ -14,7 +14,7 @@ namespace PE3_Adriana_Kenny.web.Entities
 
         public long HotelId { get; set; }
         
-        public long RoomtypeId { get; set; }
+        public long RoomTypeId { get; set; }
 
 
         [Required]
