@@ -1133,17 +1133,370 @@ namespace PE3_Adriana_Kenny.web.Data
                     RoomTypeId = 4,
                     Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer airconditioning",
                     PriceNight = 70
-                }
+                },
 
+                 new Room
+                 {
+                     Id = 81,
+                     HotelId = 17,
+                     RoomTypeId = 1,
+                     Description = "Deze suite heeft een balkon, een betegelde / marmeren vloer en airconditioning.",
+                     PriceNight = 140
+                 },
+                new Room
+                {
+                    Id = 82,
+                    HotelId = 17,
+                    RoomTypeId = 3,
+                    Description = "Tweepersoonskamer met betegelde / marmeren vloeren en een kitchenette met keukengerei en airconditioning.",
+                    PriceNight = 70
+                },
+                new Room
+                {
+                    Id = 83,
+                    HotelId = 17,
+                    RoomTypeId = 5,
+                    Description = "Tweepersoonskamer met 2 eenpersoonsbedden, betegelde / marmeren vloeren en een kitchenette met keukengerei.Gedeelde badkamer.",
+                    PriceNight = 75
+                },
+                new Room
+                {
+                    Id = 84,
+                    HotelId = 17,
+                    RoomTypeId = 4,
+                    Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer  airconditioning ",
+                    PriceNight = 90
+                },
+                new Room
+                {
+                    Id = 85,
+                    HotelId = 17,
+                    RoomTypeId = 4,
+                    Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer airconditioning",
+                    PriceNight = 90
+                },
+                new Room
+                {
+                    Id = 86,
+                    HotelId = 18,
+                    RoomTypeId = 1,
+                    Description = "Deze suite heeft een balkon, een betegelde / marmeren vloer en airconditioning.",
+                    PriceNight = 150
+                },
+                new Room
+                {
+                    Id = 87,
+                    HotelId = 18,
+                    RoomTypeId = 2,
+                    Description = "Deze suite heeft een balkon,een eigen ingang, een zithoek en airconditioning",
+                    PriceNight = 120
+                },
+                new Room
+                {
+                    Id = 88,
+                    HotelId = 18,
+                    RoomTypeId = 5,
+                    Description = "Tweepersoonskamer met 2 eenpersoonsbedden, betegelde / marmeren vloeren en een kitchenette met keukengerei.Gedeelde badkamer.",
+                    PriceNight = 75
+                },
+                new Room
+                {
+                    Id = 89,
+                    HotelId = 18,
+                    RoomTypeId = 4,
+                    Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer  airconditioning ",
+                    PriceNight = 95
+                },
+                new Room
+                {
+                    Id = 90,
+                    HotelId = 18,
+                    RoomTypeId = 4,
+                    Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer airconditioning",
+                    PriceNight = 95
+                },
 
+                new Room
+                {
+                    Id = 91,
+                    HotelId = 19,
+                    RoomTypeId = 1,
+                    Description = "Deze suite heeft een balkon, een betegelde / marmeren vloer en airconditioning.",
+                    PriceNight = 120
+                },
+                new Room
+                {
+                    Id = 92,
+                    HotelId = 19,
+                    RoomTypeId = 2,
+                    Description = "Deze suite heeft een balkon,een eigen ingang, een zithoek en airconditioning",
+                    PriceNight = 100
+                },
+                new Room
+                {
+                    Id = 93,
+                    HotelId = 19,
+                    RoomTypeId = 5,
+                    Description = "Tweepersoonskamer met 2 eenpersoonsbedden, betegelde / marmeren vloeren en een kitchenette met keukengerei.Gedeelde badkamer.",
+                    PriceNight = 85
+                },
+                new Room
+                {
+                    Id = 94,
+                    HotelId = 19,
+                    RoomTypeId = 4,
+                    Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer  airconditioning ",
+                    PriceNight = 95
+                },
+                new Room
+                {
+                    Id = 95,
+                    HotelId = 19,
+                    RoomTypeId = 4,
+                    Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer airconditioning",
+                    PriceNight = 95
+                },
+                 new Room
+                 {
+                     Id = 96,
+                     HotelId = 20,
+                     RoomTypeId = 1,
+                     Description = "Deze suite heeft een balkon, een betegelde / marmeren vloer en airconditioning.",
+                     PriceNight = 180
+                 },
+                new Room
+                {
+                    Id = 97,
+                    HotelId = 20,
+                    RoomTypeId = 2,
+                    Description = "Deze suite heeft een balkon,een eigen ingang, een zithoek en airconditioning",
+                    PriceNight = 150
+                },
+                new Room
+                {
+                    Id = 98,
+                    HotelId = 20,
+                    RoomTypeId = 5,
+                    Description = "Tweepersoonskamer met 2 eenpersoonsbedden, betegelde / marmeren vloeren en een kitchenette met keukengerei.Gedeelde badkamer.",
+                    PriceNight = 90
+                },
+                new Room
+                {
+                    Id = 99,
+                    HotelId = 20,
+                    RoomTypeId = 4,
+                    Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer  airconditioning ",
+                    PriceNight = 110
+                },
+                new Room
+                {
+                    Id = 100,
+                    HotelId = 20,
+                    RoomTypeId = 4,
+                    Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer airconditioning",
+                    PriceNight = 110
+                },
+                 new Room
+                 {
+                     Id = 101,
+                     HotelId = 21,
+                     RoomTypeId = 1,
+                     Description = "Deze suite heeft een balkon, een betegelde / marmeren vloer en airconditioning.",
+                     PriceNight = 150
+                 },
+                new Room
+                {
+                    Id = 102,
+                    HotelId = 21,
+                    RoomTypeId = 2,
+                    Description = "Deze suite heeft een balkon,een eigen ingang, een zithoek en airconditioning",
+                    PriceNight = 130
+                },
+                new Room
+                {
+                    Id = 103,
+                    HotelId = 21,
+                    RoomTypeId = 5,
+                    Description = "Tweepersoonskamer met 2 eenpersoonsbedden, betegelde / marmeren vloeren en een kitchenette met keukengerei.Gedeelde badkamer.",
+                    PriceNight = 80
+                },
+                new Room
+                {
+                    Id = 104,
+                    HotelId = 21,
+                    RoomTypeId = 4,
+                    Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer  airconditioning ",
+                    PriceNight = 100
+                },
+                new Room
+                {
+                    Id = 105,
+                    HotelId = 21,
+                    RoomTypeId = 4,
+                    Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer airconditioning",
+                    PriceNight = 100
+                },
+                new Room
+                {
+                    Id = 106,
+                    HotelId = 22,
+                    RoomTypeId = 1,
+                    Description = "Deze suite heeft een balkon, een betegelde / marmeren vloer en airconditioning.",
+                    PriceNight = 170
+                },
+                new Room
+                {
+                    Id = 107,
+                    HotelId = 22,
+                    RoomTypeId = 2,
+                    Description = "Deze suite heeft een balkon,een eigen ingang, een zithoek en airconditioning",
+                    PriceNight = 150
+                },
+                new Room
+                {
+                    Id = 108,
+                    HotelId = 22,
+                    RoomTypeId = 5,
+                    Description = "Tweepersoonskamer met 2 eenpersoonsbedden, betegelde / marmeren vloeren en een kitchenette met keukengerei.Gedeelde badkamer.",
+                    PriceNight = 90
+                },
+                new Room
+                {
+                    Id = 109,
+                    HotelId = 22,
+                    RoomTypeId = 4,
+                    Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer  airconditioning ",
+                    PriceNight = 105
+                },
+                new Room
+                {
+                    Id = 110,
+                    HotelId = 22,
+                    RoomTypeId = 4,
+                    Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer airconditioning",
+                    PriceNight = 105
+                },
 
-
-
-
-
-
-
-                );
+                 new Room
+                 {
+                     Id = 111,
+                     HotelId = 23,
+                     RoomTypeId = 1,
+                     Description = "Deze suite heeft een balkon, een betegelde / marmeren vloer en airconditioning.",
+                     PriceNight = 160
+                 },
+                new Room
+                {
+                    Id = 112,
+                    HotelId = 23,
+                    RoomTypeId = 3,
+                    Description = "Tweepersoonskamer met betegelde / marmeren vloeren en een kitchenette met keukengerei en airconditioning",
+                    PriceNight = 90
+                },
+                new Room
+                {
+                    Id = 113,
+                    HotelId = 23,
+                    RoomTypeId = 5,
+                    Description = "Tweepersoonskamer met 2 eenpersoonsbedden, betegelde / marmeren vloeren en een kitchenette met keukengerei.Gedeelde badkamer.",
+                    PriceNight = 100
+                },
+                new Room
+                {
+                    Id = 114,
+                    HotelId = 23,
+                    RoomTypeId = 3,
+                    Description = "Tweepersoonskamer met betegelde / marmeren vloeren en een kitchenette met keukengerei en airconditioning ",
+                    PriceNight = 90
+                },
+                new Room
+                {
+                    Id = 115,
+                    HotelId = 23,
+                    RoomTypeId = 4,
+                    Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer airconditioning",
+                    PriceNight = 110
+                },
+                 new Room
+                 {
+                     Id = 116,
+                     HotelId = 24,
+                     RoomTypeId = 1,
+                     Description = "Deze suite heeft een balkon, een betegelde / marmeren vloer en airconditioning.",
+                     PriceNight = 130
+                 },
+                new Room
+                {
+                    Id = 117,
+                    HotelId = 24,
+                    RoomTypeId = 3,
+                    Description = "Tweepersoonskamer met betegelde / marmeren vloeren en een kitchenette met keukengerei en airconditioning",
+                    PriceNight = 80
+                },
+                new Room
+                {
+                    Id = 118,
+                    HotelId = 24,
+                    RoomTypeId = 5,
+                    Description = "Tweepersoonskamer met 2 eenpersoonsbedden, betegelde / marmeren vloeren en een kitchenette met keukengerei.Gedeelde badkamer.",
+                    PriceNight = 80
+                },
+                new Room
+                {
+                    Id = 119,
+                    HotelId = 24,
+                    RoomTypeId = 3,
+                    Description = "Tweepersoonskamer met betegelde / marmeren vloeren en een kitchenette met keukengerei en airconditioning ",
+                    PriceNight = 80
+                },
+                new Room
+                {
+                    Id = 120,
+                    HotelId = 24,
+                    RoomTypeId = 4,
+                    Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer airconditioning",
+                    PriceNight = 100
+                },
+                new Room
+                {
+                    Id = 121,
+                    HotelId = 25,
+                    RoomTypeId = 1,
+                    Description = "Deze suite heeft een balkon, een betegelde / marmeren vloer en airconditioning.",
+                    PriceNight = 160
+                },
+                new Room
+                {
+                    Id = 122,
+                    HotelId = 25,
+                    RoomTypeId = 2,
+                    Description = "Deze suite heeft een balkon,een eigen ingang, een zithoek en airconditioning",
+                    PriceNight = 140
+                },
+                new Room
+                {
+                    Id = 123,
+                    HotelId = 25,
+                    RoomTypeId = 5,
+                    Description = "Tweepersoonskamer met 2 eenpersoonsbedden, betegelde / marmeren vloeren en een kitchenette met keukengerei.Gedeelde badkamer.",
+                    PriceNight = 90
+                },
+                new Room
+                {
+                    Id = 124,
+                    HotelId = 25,
+                    RoomTypeId = 3,
+                    Description = "Tweepersoonskamer met betegelde / marmeren vloeren en een kitchenette met keukengerei en airconditioning ",
+                    PriceNight = 90
+                },
+                new Room
+                {
+                    Id = 125,
+                    HotelId = 25,
+                    RoomTypeId = 4,
+                    Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer airconditioning",
+                    PriceNight = 110
+                });
 
         }
     }
