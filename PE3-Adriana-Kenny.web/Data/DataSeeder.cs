@@ -403,7 +403,7 @@ namespace PE3_Adriana_Kenny.web.Data
                                         Description = "Het Irotama Resort ligt op 100 meter van het strand en " +
                                         "biedt op het terrein zelf watersportactiviteiten, 3 buitenzwembaden en " +
                                         "een spa- en fitnesscentrum. Er is WiFi beschikbaar. Er worden ook activiteiten " +
-                                        "voor kinderen georganiseerd. Er is bovendien gratis vervoer vanaf de luchthaven mogelijk."
+                                        "voor kinderen georganiseerd. Er is bovendien gratis vervoer vanaf de luchthaven mogelijk.",
                                         Photo = "IrotamaResort.jpg",
                                         CityId = 5,
 

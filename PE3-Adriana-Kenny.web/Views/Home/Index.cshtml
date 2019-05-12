@@ -1,8 +1,53 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model PE3_Adriana_Kenny.web.Models.HomeIndexVM
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+
+<div id="cardOverview">
+
+    <h1>Populaire steden in Colombia</h1>
+
+
+    @foreach (var city in Model.Cities)
+    {
+
+        <div class="CityCard">
+
+            <img src="~/images/cities/@city.Photo" />
+
+            <h3>@city.Name</h3>
+            <p>@city.Description</p>
+            <hr />
+
+        </div>
+    }
 </div>
+    <div class="info">
+
+
+
+        <p>
+            Colombia has major attractions for a tourist destination, such as Cartagena and its historic surroundings,
+            which are on the UNESCO World Heritage List; the insular department of San Andrés, Providencia y Santa Catalina;
+            and Santa Marta and the surrounding area. The coffee region is also a very popular destination, especially the
+            city of Armenia and its surroundings. Fairly recently, Bogotá, the nation's capital, has become Colombia's major
+            tourist destination because of its improved museums and entertainment facilities and its major urban renovations,
+            including the rehabilitation of public areas, the development of parks, and the creation of an extensive network of
+            cycling routes. With its very rich and varied geography, which includes the Amazon and Andean regions, the llanos,
+            the Caribbean and Pacific coasts, and the deserts of La Guajira and Tatacoa Desert, and its unique biodiversity,
+            Colombia also has major potential for ecotourism.
+        </p>
+
+
+
+
+        <div id="video">
+
+            <iframe width="460" height="315" src="https://www.youtube.com/embed/IzRLMnu-FoU?controls=0"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+
+        </div>
+
+
+    </div>
+
