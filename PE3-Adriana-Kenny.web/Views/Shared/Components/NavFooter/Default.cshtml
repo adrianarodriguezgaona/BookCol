@@ -1,0 +1,17 @@
+﻿@model HomeIndexVM
+
+
+<h4> Vind hotels</h4>
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Kies stad
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        @foreach (var city in Model.Cities)
+        {
+            <a class="dropdown-item">@city.Name</a>
+        }
+
+    </div>
+</div>
+

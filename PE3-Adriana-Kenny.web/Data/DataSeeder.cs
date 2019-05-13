@@ -1014,7 +1014,6 @@ namespace PE3_Adriana_Kenny.web.Data
                     Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer airconditioning",
                     PriceNight = 100
                 },
-                
                  new Room
                  {
                      Id = 71,
@@ -1055,6 +1054,7 @@ namespace PE3_Adriana_Kenny.web.Data
                     Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer airconditioning",
                     PriceNight = 100
                 },
+                
                  new Room
                  {
                      Id = 76,
