@@ -1,0 +1,57 @@
+﻿@model PE3_Adriana_Kenny.web.Entities.Client
+
+
+<h4 class="titel">Registreer je bij BookCo</h4>
+
+<form id="RegisterForm" asp-controller="Home" asp-action="FormRegister" method="post">
+    <div class="form-group">
+        <label asp-for="Name" >Naam</label>
+        <input asp-for="Name" class="form-control">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Surname">Voornaam</label>
+        <input asp-for="Surname" class="form-control">
+        <span asp-validation-for="Surname" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Email">E-mailadres</label>
+        <input asp-for="Email" class="form-control">
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+   
+
+    <div class="form-group">
+        <label asp-for="Address">Adres</label>
+        <input asp-for="Address" class="form-control">
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ZipCode">Postcode</label>
+        <input asp-for="ZipCode" class="form-control input-group" >
+        <span asp-validation-for="ZipCode" class="text-danger"></span>
+
+        <label asp-for="Community">Gemeente</label>
+        <input asp-for="Community" class="form-control input-group">
+        <span asp-validation-for="Community" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Country">Land</label>
+        <input asp-for="Country" list="Landen" class="form-control">
+        <datalist id="Landen">
+
+            <option value="België"></option>
+            <option value="Nederland"></option>
+
+
+        </datalist>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Registreer</button>
+</form>
