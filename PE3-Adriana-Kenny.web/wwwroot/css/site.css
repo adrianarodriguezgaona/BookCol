@@ -9,11 +9,12 @@
 
 
 header {
-    background-color: #738fbc;
+    background-color:steelblue;
     color: black;
     border-radius: 15px;
     position: relative;
     height: 200px;
+    margin-bottom: 30px;
 }
 
 header img {
@@ -21,8 +22,8 @@ header img {
         height:90px;
         margin: 5px;
         position:absolute;
-        top:0%;
-        left:0%;
+        top:0;
+        left:0;
     }
 
 header h1 {
@@ -54,7 +55,7 @@ header h1 {
     padding: 5px 10px 5px 10px;
     text-align: center;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 15px;
     border-style: groove;
     background-color: #dee8f7;
     border-radius: 20px;
@@ -112,10 +113,24 @@ footer {
     background-color: #738fbc;
     color: black;
     border-radius: 15px;
-    height: 200px;
+    height: 200px;      
+    margin-top:30px;
 }
 
     footer div {
         flex-basis: 30%;
+ 
     }
 
+   #RegisterForm {margin-bottom: 20px;
+                  width: 600px;
+                  margin: 0 auto;
+                  border: 0.5px solid;
+                  text-align: center;
+   }
+
+   .form-control {width: 250px;
+                  margin: 0 auto;
+   }
+
+   .titel {margin-left: 200px;}
