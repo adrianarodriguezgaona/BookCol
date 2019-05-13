@@ -1014,46 +1014,7 @@ namespace PE3_Adriana_Kenny.web.Data
                     Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer airconditioning",
                     PriceNight = 100
                 },
-                 new Room
-                 {
-                     Id = 71,
-                     HotelId = 15,
-                     RoomTypeId = 3,
-                     Description = "Tweepersoonskamer met betegelde / marmeren vloeren en een kitchenette met keukengerei en airconditioning",
-                     PriceNight = 55
-                 },
-                new Room
-                {
-                    Id = 72,
-                    HotelId = 15,
-                    RoomTypeId = 3,
-                    Description = "Tweepersoonskamer met betegelde / marmeren vloeren en een kitchenette met keukengerei en airconditioning.",
-                    PriceNight = 90
-                },
-                new Room
-                {
-                    Id = 73,
-                    HotelId = 15,
-                    RoomTypeId = 5,
-                    Description = "Tweepersoonskamer met 2 eenpersoonsbedden, betegelde / marmeren vloeren en een kitchenette met keukengerei.Gedeelde badkamer.",
-                    PriceNight = 90
-                },
-                new Room
-                {
-                    Id = 74,
-                    HotelId = 15,
-                    RoomTypeId = 4,
-                    Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer  airconditioning ",
-                    PriceNight = 100
-                },
-                new Room
-                {
-                    Id = 75,
-                    HotelId = 15,
-                    RoomTypeId = 4,
-                    Description = "Deze driepersoonskamer is voorzien van een zithoek, airconditioning en een betegelde / marmeren vloer airconditioning",
-                    PriceNight = 100
-                },
+                
                  new Room
                  {
                      Id = 71,
