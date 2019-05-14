@@ -1,0 +1,9 @@
+﻿@model  PE3_Adriana_Kenny.web.Models.HotelFilterHotelVM
+
+
+    <form id="FilterHotels" asp-controller="Home" asp-action="FilterHotel" method="post">
+        <div class="form-group">
+            <label asp-for="Stad">Naam</label>
+            <input asp-for="Stad" type ="checkbox" value="Bogota" class="form-control">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>

@@ -8,9 +8,14 @@ namespace PE3_Adriana_Kenny.web.Controllers
 {
     public class HotelController : Controller
     {
-        public IActionResult Index()
+
+        public IActionResult FilterHotel()
         {
+
+
             return View();
         }
+
+
     }
 }
