@@ -131,7 +131,7 @@ namespace PE3_Adriana_Kenny.web.Data
                             NmbrOfRooms = 5,
                             Description = "Ga voor een sterrenbehandeling en geniet van service van wereldklasse in " +
                             "Four Seasons Hotel Casa Medina Bogotavan T Zone..",
-                            Photo = "FourSeasonsCasaMedina",
+                            Photo = "FourSeasonsCasaMedina.jpg",
                             CityId = 1,
 
                         },
@@ -147,7 +147,7 @@ namespace PE3_Adriana_Kenny.web.Data
                                 "Expo Suites Parque Central Bavaria ligt in de financiële wijk van Bogotá.Het biedt een trendy," +
                               "paars interieur met witte orchideeën en kamers met gratis WiFi.",
 
-                               Photo = "ExpoSuitesParque",
+                               Photo = "ExpoSuitesParque.jpg",
                                CityId = 1,
                            },
 
