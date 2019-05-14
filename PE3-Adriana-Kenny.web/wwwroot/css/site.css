@@ -133,3 +133,10 @@ footer {
    }
 
    .titel {margin-left: 200px;}
+
+
+   .check {height: 15px;
+           width: 15px;
+           margin-left:0;
+           display:inline-block;
+   }
