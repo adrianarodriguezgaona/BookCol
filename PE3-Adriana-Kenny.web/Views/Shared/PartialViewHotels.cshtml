@@ -1,0 +1,17 @@
+﻿@model HotelFilterHotelVM
+
+
+    @foreach (var hotel in Model.Hotels)
+    {
+        var city = hotel.City;
+        var img = $"{hotel.Stars}.jpg";
+        <div class="fotos">
+            <img class="fotosHotel" src="~/images/hotels/@hotel.Photo" alt="@hotel.Name" />
+            <h3>@hotel.Name <img src="~/images/sterren/@img" alt="@hotel.Stars" /></h3>
+            <p>@city.Name</p>
+            <p>@hotel.Description</p>
+
+
+        </div>
+
+    }

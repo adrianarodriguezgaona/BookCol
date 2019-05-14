@@ -9,7 +9,7 @@
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         @foreach (var city in Model.Cities)
         {
-            <a class="dropdown-item">@city.Name</a>
+            <a class="dropdown-item" asp-controller="Hotel" asp-action="HotelByCity" asp-route-id="@city.Id">@city.Name</a>
         }
 
     </div>
