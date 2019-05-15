@@ -1,10 +1,5 @@
-﻿.mi_master {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    background-color: #f7f7f7
-    /*font-family: 'Fondamento',cursive;*/
+﻿body {width: 1200px;
+      margin: 0 auto; 
 }
 
 
@@ -47,8 +42,8 @@ header h1 {
     left:0%;
 }
 .fotos {
-    height: 250px;
-    width: 70%;
+    height: 220px;
+    width: 700px;
     border-style: groove;
     border-color: #2a4f89;
     margin:15px 5px 15px 5px;
@@ -144,6 +139,17 @@ footer {
                   text-align: center;
    }
 
+
+   #filter {display:inline-block;
+            width: 300px;
+            vertical-align:top;
+   }
+
+   #hotellist {display: inline-block;
+               width:700px;
+   }
+
+
    .form-control {width: 250px;
                   margin: 0 auto;
    }
@@ -155,4 +161,9 @@ footer {
            width: 15px;
            margin-left:0;
            display:inline-block;
+           margin-right:10px;
+   }
+
+   .btn {margin: 10px 15px;
+        
    }

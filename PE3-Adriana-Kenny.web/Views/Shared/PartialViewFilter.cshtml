@@ -1,0 +1,16 @@
+﻿@model HotelFilterHotelVM
+
+
+<form id="FilterHotels" asp-controller="Hotel" asp-action="HotelByCity" method="post">
+    <div class="form-group">
+        <label asp-for="Stad">Stad</label><br />
+
+        @foreach (var stad in Model.Steden)
+        {
+            <input asp-for="Stad" type="radio" value="@stad.Id" name="Stad" class="form-control check" />@stad.Name
+            <br />
+    }
+        
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </div>
+</form>

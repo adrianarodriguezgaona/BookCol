@@ -34,6 +34,10 @@ namespace PE3_Adriana_Kenny.web.Controllers
                        .Include(c => c.City)
                        .ToList();
 
+            vm.Steden = bookingContext.Cities
+                     .OrderBy(c => c.Name)
+                     .ToList();
+
             return View(vm);
         }
 
@@ -46,7 +50,31 @@ namespace PE3_Adriana_Kenny.web.Controllers
                        .Where(h => h.CityId == id)
                        .ToList();
 
+            vm.Steden = bookingContext.Cities
+                        .OrderBy(c => c.Name)
+                        .ToList();
+                        
+
             return View(vm);
+        }
+
+        [HttpPost]
+        public IActionResult HotelByCity()
+
+        {
+
+            var stad = Request.Form["Stad"][0];
+
+
+
+
+
+            Convert.ToInt64(stad);
+
+
+
+
+            return RedirectToAction("HotelByCity", new { id = stad });
         }
     }
 }

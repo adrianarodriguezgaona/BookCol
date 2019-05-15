@@ -23,6 +23,7 @@ namespace PE3_Adriana_Kenny.web.Entities
         public string Address { get; set; }        
 
         [Required(ErrorMessage = "Vul een Postcode in")]
+        [Range(1000,9999, ErrorMessage = "Vul een geldige postcode in")]
         public int ZipCode { get; set; }
 
         [Required(ErrorMessage = "Vul je gemeente in")]

@@ -12,5 +12,6 @@ namespace PE3_Adriana_Kenny.web.Models
         public int AantalSterren { get; set; }
         public string SoortKamer { get; set; }
         public List<Hotel> Hotels { get; set; }
+        public List<City> Steden { get; set; }
     }
 }
