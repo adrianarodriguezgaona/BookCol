@@ -13,8 +13,9 @@ namespace PE3_Adriana_Kenny.web.Entities
         public long Id { get; set; }
 
         [Required]
-        public string Type{ get; set; }  
-        
+        public string Type{ get; set; }
+
+        public  int MaxPersoons { get; set; }
         public List<Room> Rooms { get; set; }
 
     }

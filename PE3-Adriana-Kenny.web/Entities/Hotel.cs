@@ -35,6 +35,8 @@ namespace PE3_Adriana_Kenny.web.Entities
         [Required]
         public string Description { get; set; }
 
+        public string Faciliteiten { get; set; }
+
         public City City { get; set; }
 
         public List<Room> Rooms { get; set; }
