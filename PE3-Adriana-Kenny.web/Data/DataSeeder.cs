@@ -62,11 +62,9 @@ namespace PE3_Adriana_Kenny.web.Data
                    {
                        Id = 5,
                        Name = "Santa Marta",
-                       Description = "Colombia beschikt over verschillende eilanden.Denk bijvoorbeeld aan eilandgroepen als de Rosario -" +
-                      " eilanden en de San Bernardo - eilanden.Ook heeft Colombia verschillende eilanden die niet direct voor de Colombiaanse " +
-                      "kust liggen, maar wel een onderdeel van het land zijn.Een goed voorbeeld hiervan is San Andres wat in de Caribische Zee ligt",
-                       Photo = "SantaMarta.jpg"
-
+                       Description = "Santa Marta is een belangrijke havenstad in Colombia, maar ook reizigers mogen de stad zeker niet overslaan. Santa Marta is namelijk de perfecte uitvalsbasis om de diversiteit van de Caribische kust te ontdekken."+"" +
+                       " Om te dwalen in de groene jungle en te relaxen aan de paradijselijke stranden. De stad ligt namelijk niet alleen aan de noordelijke"+
+                       " kust, maar ook aan de voet van het gebergte Sierra Nevada de Santa Marta."
                    });
 
 
@@ -86,6 +84,7 @@ namespace PE3_Adriana_Kenny.web.Data
                     Description = "Dit hotel ligt in Centro International, binnen 2 km afstand van " +
                                                 "Nationaal Museum en Goudmuseum. Ook Monserrate en Amerikaanse ambassade liggen binnen 5 km afstand.",
                     Photo = "IbisBogota.jpg",
+                    Faciliteiten="Gratis wifi, rookvrije kamers,24-uursreceptie,bar,goed ontbijt",
                     CityId = 1
 
                 },
@@ -100,6 +99,7 @@ namespace PE3_Adriana_Kenny.web.Data
                       Description = "Selina Parque 93 Bogota ligt in Bogotá en beschikt over een terras en een gemeenschappelijke lounge. Dit 3-sterrenhotel " +
                       "biedt een 24-uursreceptie, een gedeelde keuken en gratis WiFi. De accommodatie is rookvrij en ligt op 2,5 km van T Zone..",
                       Photo = "SelinaParque.jpg",
+                      Faciliteiten = "Gratis wifi, rookvrije kamers,restaurant,bar,goed ontbijt",
                       CityId = 1,
 
 
@@ -117,6 +117,7 @@ namespace PE3_Adriana_Kenny.web.Data
                          Description = "Deportel Bogotá ligt op 100 m van het La Europa Park en op 3 km van het" +
                          "Simón Bolívar Park. Het beschikt over een gemeenschappelijke lounge en gratis WiFi in alle ruimtes.",
                          Photo = "Deportel.jpg",
+                         Faciliteiten = "Gratis wifi, rookvrije kamers,24-uursreceptie,bar,restaurant,wasservice,goed ontbijt",
                          CityId = 1,
 
                      },
@@ -132,6 +133,7 @@ namespace PE3_Adriana_Kenny.web.Data
                             Description = "Ga voor een sterrenbehandeling en geniet van service van wereldklasse in " +
                             "Four Seasons Hotel Casa Medina Bogotavan T Zone..",
                             Photo = "FourSeasonsCasaMedina.jpg",
+                            Faciliteiten = "Gratis wifi, luchthavenshuttle,bar,restaurant,wasservice,goed ontbijt",
                             CityId = 1,
 
                         },
@@ -146,7 +148,7 @@ namespace PE3_Adriana_Kenny.web.Data
                                Description = " Een van onze bestsellers in Bogota!" +
                                 "Expo Suites Parque Central Bavaria ligt in de financiële wijk van Bogotá.Het biedt een trendy," +
                               "paars interieur met witte orchideeën en kamers met gratis WiFi.",
-
+                               Faciliteiten = "Gratis wifi, rookvrije kamers,24-uursreceptie,bar,restaurant,wasservice,goed ontbijt",
                                Photo = "ExpoSuitesParque.jpg",
                                CityId = 1,
                            },
@@ -165,6 +167,7 @@ namespace PE3_Adriana_Kenny.web.Data
                                   " van/naar de luchthaven. Het ligt in het historische centrum van Cartagena, dicht bij " +
                                   "India Catalina in het traditionele stadsdeel La Matuta.",
                                   Photo = "StilCartagena.jpg",
+                                  Faciliteiten = "Gratis wifi, rookvrije kamers,24-uursreceptie,bar,restaurant,airconditioning,goed ontbijt",
                                   CityId = 2,
 
                               },
@@ -180,6 +183,7 @@ namespace PE3_Adriana_Kenny.web.Data
                                   " De accommodatie biedt gratis WiFi en een zwembad op het dak met" +
                                   " panoramisch uitzicht op de baai en de ommuurde stad Cartagena.",
                                  Photo = "CostaDelSol.jpg",
+                                 Faciliteiten = "Gratis wifi, rookvrije kamers,24-uursreceptie,bar,restaurant,wasservice,goed ontbijt",
                                  CityId = 2,
 
                              },
@@ -197,6 +201,7 @@ namespace PE3_Adriana_Kenny.web.Data
                                    "De 4-sterrenaccommodatie ligt op 2,8 km van het Paleis van de Inquisitie," +
                                    " het Goudmuseum van Cartagena en het Bolivar-park.",
                                    Photo = "ZiOneLuxury.jpg",
+                                   Faciliteiten = "Gratis wifi, rookvrije kamers,bar,restaurant,wasservice,airconditioning,goed ontbijt",
                                    CityId = 2,
 
                                },
@@ -212,6 +217,7 @@ namespace PE3_Adriana_Kenny.web.Data
                                    "buitenzwembad, stijlvolle koloniale architectuur en spafaciliteiten. " +
                                    "U kunt massages en duiktrips reserveren. WiFi is gratis beschikbaar.",
                                    Photo = "CaribeByFaranda.jpg",
+                                   Faciliteiten = "Gratis wifi, luchthavenshuttle,bar,restaurant,wasservice,goed ontbijt",
                                    CityId = 2,
 
                                },
@@ -229,6 +235,7 @@ namespace PE3_Adriana_Kenny.web.Data
                                    "over een dakterras met een zwembad en een gedeelde woonkamer. Het beschikt ook" +
                                    " over een eigen gastronomisch restaurant en gratis WiFi.",
                                    Photo = "BastionLuxury.jpg",
+                                   Faciliteiten = "Gratis wifi, luchthavenshuttle,bar,restaurant,gratis parkeergelegenheid,goed ontbijt",
                                    CityId = 2,
 
                                },
@@ -243,8 +250,9 @@ namespace PE3_Adriana_Kenny.web.Data
                                   CityId = 3, 
                                   Description = "San Fernando Plaza beschikt over een verwarmd buitenzwembad, een spa en een fitnesscentrum." +
                                   "Het biedt luxe accommodatie in El Poblado, de exclusieve financiële en commerciële wijk van Medellin.Het hotel heeft ook een restaurant en een bar.", 
-                                  Photo ="SanFernandoPlaza.jpg",  
-                                  },
+                                  Photo ="SanFernandoPlaza.jpg",
+                                  Faciliteiten = "Gratis wifi, luchthavenshuttle,bar,restaurant,airconditioning,goed ontbijt",
+                               },
                               new Hotel{
                                   Id = 12,
                                   Name = "Hotel Suite 45",
@@ -255,6 +263,7 @@ namespace PE3_Adriana_Kenny.web.Data
                                   Description = "Hotel Suite 45 ligt in Medellin, op slechts 1 km van het metrostation Parque Berrio en biedt kamers met gratis WiFi en kabel-tv. " + 
                                   "Bij de accommodatie is gratis parkeergelegenheid beschikbaar. Het centrale plein en het Botero-plein liggen op 1 km afstand.",
                                   Photo ="Suite45.jpg",
+                                  Faciliteiten = "Gratis wifi,bar,restaurant,wasservice,goed ontbijt",
                               },
 
                               new Hotel{
@@ -267,6 +276,7 @@ namespace PE3_Adriana_Kenny.web.Data
                                   Description = "Hotel Medellin 33 ligt op 2,9 km van Pueblito Paisa, in Medellín.Het biedt een aantal voorzieningen, waaronder een buitenzwembad, een fitnesscentrum en een terras." +
                                   "Tot de faciliteiten van deze accommodatie behoren een restaurant, een 24 - uursreceptie, een gemeenschappelijke lounge en gratis WiFi. De accommodatie beschikt over een hot tub, entertainmentpersoneel en roomservice.",
                                   Photo = "Medellin33.jpg",
+                                  Faciliteiten = "Gratis wifi,rookvrije kamers,bar,restaurant,wasservice,goed ontbijt",
                               },
 
                               new Hotel{
@@ -279,6 +289,8 @@ namespace PE3_Adriana_Kenny.web.Data
                                   Description = "Selina Medellin ligt in Medellín en biedt een terras, een gemeenschappelijke lounge, een restaurant, een 24 - uursreceptie," +
                                   " een gemeenschappelijke keuken en gratis WiFi. Voor een drankje kunt u terecht bij de bar.",
                                   Photo = "SelinaMedellin.jpg",
+                                  Faciliteiten = "Gratis wifi,rookvrije kamers,bar,restaurant,wasservice,goed ontbijt",
+                             
                               },
 
                               new Hotel{
@@ -290,8 +302,8 @@ namespace PE3_Adriana_Kenny.web.Data
                                   CityId = 3,
                                   Description = "Mooie, schone kamers met een moderne badkamer. Op loopafstand van het metrostation en om de hoek van een gezellige uitgaansstraat in Medellin met leuke restaurants" +
                                   " e.d.waar weinig toeristen komen en je dus meer tussen de locals zit. Top locatie!",
-
                                   Photo = "Med70.jpg",
+                                  Faciliteiten = "Gratis wifi,rookvrije kamers,bar,restaurant,gratis parkeergelegenheid,wasservice,goed ontbijt",
                               },
 
                               // Hotels San Andres---------------------------------------------------------------------
@@ -307,6 +319,7 @@ namespace PE3_Adriana_Kenny.web.Data
                                     Description = "San Andrés Hostel heeft kamers met airconditioning." +
                                     "Het ligt op slechts 5 minuten lopen van het strand en de zee van 7 kleuren.Er is een discobar bij de accommodatie en er zijn duiklessen beschikbaar. ",
                                     Photo = "ViajeroSanandresHostel.jpg ",
+                                    Faciliteiten = "Gratis wifi,rookvrije kamers,bar,restaurant,gratis parkeergelegenheid,wasservice,goed ontbijt",
                                },
 
                                new Hotel{
@@ -318,8 +331,9 @@ namespace PE3_Adriana_Kenny.web.Data
                                     CityId = 4,
                                     Description = "Deze elegante villa in mediterrane stijl heeft een buitenzwembad." +
                                     "U kunt er verblijven in kamers met airconditioning en gratis WiFi. Er is ook gratis privéparkeergelegenheid beschikbaar.",
-                                    Photo ="LeCastelBlanc.jpg"
-                                },
+                                    Photo ="LeCastelBlanc.jpg",
+                                    Faciliteiten = "Gratis wifi,luchthavenshuttle,rookvrije kamers,bar,restaurant,gratis parkeergelegenheid,wasservice,goed ontbijt",
+                               },
 
                                new Hotel{
                                     Id = 18 ,
@@ -330,7 +344,8 @@ namespace PE3_Adriana_Kenny.web.Data
                                     CityId = 4,
                                     Description = "Hotel Cocoplum Beach ligt aan het Cocoplum - strand, een van de mooiste stranden van San Andrés. Het biedt een zwembad, een spa en een restaurant met uitzicht op zee. Er is gratis WiFi beschikbaar in de gemeenschappelijke ruimtes en het hotel serveert ontbijt.",
                                     Photo = "CocoplumBeach.jpg",
-                                },
+                                    Faciliteiten = "Gratis wifi,rookvrije kamers,bar,gratis parkeergelegenheid,goed ontbijt",
+                               },
 
 
                                new Hotel{
@@ -343,7 +358,8 @@ namespace PE3_Adriana_Kenny.web.Data
                                   Description = "San Luis Place By El Dorado ligt in San Andrés, in de omgeving van de eilanden San Andres en Providencia, " +
                                   "op nog geen 3,5 km van San Andrés-baai, en beschikt over een zonneterras en een eigen strand.",
                                   Photo = "ElDorado.jpg",
-                                },
+                                  Faciliteiten = "Gratis wifi,rookvrije kamers,bar,restaurant,gratis parkeergelegenheid,airconditioning,goed ontbijt",
+                               },
 
                                new Hotel{
                                     Id = 20 ,
@@ -355,8 +371,9 @@ namespace PE3_Adriana_Kenny.web.Data
                                     Description = "Hostal Rohomar biedt gratis WiFi en uitzicht op zee in San Andrés." +
                                     " Het pension ligt op ongeveer 2,6 km van de baai van San Andres en op 3,5 km van North End. " +
                                     "Lokale bezienswaardigheden zoals Spratt Bight en The Hill zijn bereikbaar binnen respectievelijk 3,7 km en 1,9 km.",
-                                    Photo = "HostalRohomar.jpg"
-                                },
+                                    Photo = "HostalRohomar.jpg",
+                                    Faciliteiten = "Gratis wifi,rookvrije kamers,bar,gratis parkeergelegenheid,wasservice,goed ontbijt",
+                               },
 
             // Hotels Santa Marta -----------------------------------------------------
 
@@ -374,6 +391,7 @@ namespace PE3_Adriana_Kenny.web.Data
                                      "en er wordt dagelijks een Amerikaans ontbijt aangeboden.",
                                      Photo = "CatedralPlaza.jpg",
                                      CityId = 5,
+                                     Faciliteiten = "Gratis wifi,rookvrije kamers,bar,restaurant,gratis parkeergelegenhei,goed ontbijt",
 
                                  },
 
@@ -390,7 +408,7 @@ namespace PE3_Adriana_Kenny.web.Data
                                        "U kunt dineren in een restaurant in de vorm van een piratenschip.",
                                        Photo = "DecameronGaleon.jpg",
                                        CityId = 5,
-
+                                       Faciliteiten = "Gratis wifi,rookvrije kamers,bar,wasservice,goed ontbijt",
                                    },
 
                                     new Hotel
@@ -406,7 +424,7 @@ namespace PE3_Adriana_Kenny.web.Data
                                         "voor kinderen georganiseerd. Er is bovendien gratis vervoer vanaf de luchthaven mogelijk.",
                                         Photo = "IrotamaResort.jpg",
                                         CityId = 5,
-
+                                        Faciliteiten = "Gratis wifi,rookvrije kamers,bar,restaurant,gratis parkeergelegenheid,wasservice,luchthavenshuttle,goed ontbijt",
                                     },
 
 
@@ -423,7 +441,7 @@ namespace PE3_Adriana_Kenny.web.Data
                                            "een terras. De accommodatie ligt op 700 m van het strand El Rodadero.",
                                            Photo = "Bunsizanisi.jpg",
                                            CityId = 5,
-
+                                           Faciliteiten = "Gratis wifi,rookvrije kamers,bar,restaurant,gratis parkeergelegenheid,wasservice,goed ontbijt",
                                        },
 
 
@@ -441,7 +459,7 @@ namespace PE3_Adriana_Kenny.web.Data
                                                " Het hotel beschikt over een gemeenschappelijke lounge.",
                                                Photo = "HiltonGardenInn.jpg",
                                                CityId = 5,
-
+                                               Faciliteiten = "Gratis wifi,rookvrije kamers,bar,restaurant,gratis parkeergelegenheid,zwembad,goed ontbijt",
                                            });
 
             modelBuilder.Entity<Roomtype>().HasData(
@@ -449,24 +467,28 @@ namespace PE3_Adriana_Kenny.web.Data
                 new Roomtype{
                 Id = 1 ,
                 Type ="Suite met Uitzicht op Zee",
+                MaxPersoons=2
                 },
                 new Roomtype
                 {
                 Id = 2 ,
                 Type ="Suite",
+                MaxPersoons = 2
                 },
                 new Roomtype{
                 Id = 3,
                 Type ="Tweepersoonskamer",
+                MaxPersoons = 2
                 },
                 new Roomtype{
                 Id = 4 ,
                 Type ="Driepersoonskamer",
+                MaxPersoons = 3
                 },
                 new Roomtype{
                 Id = 5,
                 Type ="Tweepersoonskamer met 2 aparte bedden",
-
+                MaxPersoons = 2
                 });
 
             modelBuilder.Entity<Room>().HasData(
