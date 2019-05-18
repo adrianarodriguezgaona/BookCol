@@ -10,8 +10,8 @@ using PE3_Adriana_Kenny.web.Data;
 namespace PE3_Adriana_Kenny.web.Migrations
 {
     [DbContext(typeof(BookingContext))]
-    [Migration("20190515090610_correctie")]
-    partial class correctie
+    [Migration("20190517085818_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -96,7 +96,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                         new
                         {
                             Id = 5L,
-                            Description = "Colombia beschikt over verschillende eilanden.Denk bijvoorbeeld aan eilandgroepen als de Rosario - eilanden en de San Bernardo - eilanden.Ook heeft Colombia verschillende eilanden die niet direct voor de Colombiaanse kust liggen, maar wel een onderdeel van het land zijn.Een goed voorbeeld hiervan is San Andres wat in de Caribische Zee ligt",
+                            Description = "Santa Marta is een belangrijke havenstad in Colombia, maar ook reizigers mogen de stad zeker niet overslaan. Santa Marta is namelijk de perfecte uitvalsbasis om de diversiteit van de Caribische kust te ontdekken. Om te dwalen in de groene jungle en te relaxen aan de paradijselijke stranden. De stad ligt namelijk niet alleen aan de noordelijke kust, maar ook aan de voet van het gebergte Sierra Nevada de Santa Marta.",
                             Name = "Santa Marta",
                             Photo = "SantaMarta.jpg"
                         });
@@ -148,6 +148,8 @@ namespace PE3_Adriana_Kenny.web.Migrations
                     b.Property<string>("Description")
                         .IsRequired();
 
+                    b.Property<string>("Facilities");
+
                     b.Property<string>("Name")
                         .IsRequired();
 
@@ -171,6 +173,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Transversal 6 No 27 - 85",
                             CityId = 1L,
                             Description = "Dit hotel ligt in Centro International, binnen 2 km afstand van Nationaal Museum en Goudmuseum. Ook Monserrate en Amerikaanse ambassade liggen binnen 5 km afstand.",
+                            Facilities = "Gratis wifi, rookvrije kamers,24-uursreceptie,bar,goed ontbijt",
                             Name = "Ibis Bogota Museo ",
                             NmbrOfRooms = 5,
                             Photo = "IbisBogota.jpg",
@@ -182,6 +185,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Calle 95 Numero 13-35, Chapinero,",
                             CityId = 1L,
                             Description = "Selina Parque 93 Bogota ligt in Bogotá en beschikt over een terras en een gemeenschappelijke lounge. Dit 3-sterrenhotel biedt een 24-uursreceptie, een gedeelde keuken en gratis WiFi. De accommodatie is rookvrij en ligt op 2,5 km van T Zone..",
+                            Facilities = "Gratis wifi, rookvrije kamers,restaurant,bar,goed ontbijt",
                             Name = "Selina Parque 93",
                             NmbrOfRooms = 5,
                             Photo = "SelinaParque.jpg",
@@ -193,6 +197,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Cra 71 No 69-04, Engativa",
                             CityId = 1L,
                             Description = "Deportel Bogotá ligt op 100 m van het La Europa Park en op 3 km van hetSimón Bolívar Park. Het beschikt over een gemeenschappelijke lounge en gratis WiFi in alle ruimtes.",
+                            Facilities = "Gratis wifi, rookvrije kamers,24-uursreceptie,bar,restaurant,wasservice,goed ontbijt",
                             Name = "Deportel Bogotá",
                             NmbrOfRooms = 5,
                             Photo = "Deportel.jpg",
@@ -204,6 +209,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Avenida Carrera 7 # 69a-22, Chapinero",
                             CityId = 1L,
                             Description = "Ga voor een sterrenbehandeling en geniet van service van wereldklasse in Four Seasons Hotel Casa Medina Bogotavan T Zone..",
+                            Facilities = "Gratis wifi, luchthavenshuttle,bar,restaurant,wasservice,goed ontbijt",
                             Name = "Four Seasons Hotel Casa Medina",
                             NmbrOfRooms = 5,
                             Photo = "FourSeasonsCasaMedina.jpg",
@@ -215,6 +221,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Avenida Carrera 7 # 69a-22, Chapinero",
                             CityId = 1L,
                             Description = " Een van onze bestsellers in Bogota!Expo Suites Parque Central Bavaria ligt in de financiële wijk van Bogotá.Het biedt een trendy,paars interieur met witte orchideeën en kamers met gratis WiFi.",
+                            Facilities = "Gratis wifi, rookvrije kamers,24-uursreceptie,bar,restaurant,wasservice,goed ontbijt",
                             Name = "Expo Suites Parque Bavaria",
                             NmbrOfRooms = 5,
                             Photo = "ExpoSuitesParque.jpg",
@@ -226,6 +233,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Calle 34 # 11-15. Plazoleta Telecom, La Matuna",
                             CityId = 2L,
                             Description = "Hotel Stil biedt ruime accommodatie met gratis WiFi en een pendeldienst van/naar de luchthaven. Het ligt in het historische centrum van Cartagena, dicht bij India Catalina in het traditionele stadsdeel La Matuta.",
+                            Facilities = "Gratis wifi, rookvrije kamers,24-uursreceptie,bar,restaurant,airconditioning,goed ontbijt",
                             Name = "Hotel Stil Cartagena",
                             NmbrOfRooms = 5,
                             Photo = "StilCartagena.jpg",
@@ -237,6 +245,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Bocagrande, Avenida 1A # Calle 9A Esquina, Bocagrande",
                             CityId = 2L,
                             Description = "Costa del Sol ligt aan het strand van Bocagrande. De accommodatie biedt gratis WiFi en een zwembad op het dak met panoramisch uitzicht op de baai en de ommuurde stad Cartagena.",
+                            Facilities = "Gratis wifi, rookvrije kamers,24-uursreceptie,bar,restaurant,wasservice,goed ontbijt",
                             Name = "Hotel Costa del Sol",
                             NmbrOfRooms = 5,
                             Photo = "CostaDelSol.jpg",
@@ -248,6 +257,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Calle 5 # 3 14 Bocagrande, Bocagrande,",
                             CityId = 2L,
                             Description = "Hotel Zi One in Cartagena de Indias beschikt over een buitenbad en kamers met gratis WiFi en uitzicht op zee. De 4-sterrenaccommodatie ligt op 2,8 km van het Paleis van de Inquisitie, het Goudmuseum van Cartagena en het Bolivar-park.",
+                            Facilities = "Gratis wifi, rookvrije kamers,bar,restaurant,wasservice,airconditioning,goed ontbijt",
                             Name = "Hotel Zi One Luxury",
                             NmbrOfRooms = 5,
                             Photo = "ZiOneLuxury.jpg",
@@ -259,6 +269,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Bocagrande, Carrera. 1a # 2-87, Bocagrande",
                             CityId = 2L,
                             Description = "Dit luxueuze hotel aan het Caribische strand heeft een buitenzwembad, stijlvolle koloniale architectuur en spafaciliteiten. U kunt massages en duiktrips reserveren. WiFi is gratis beschikbaar.",
+                            Facilities = "Gratis wifi, luchthavenshuttle,bar,restaurant,wasservice,goed ontbijt",
                             Name = "Hotel Caribe By Faranda",
                             NmbrOfRooms = 5,
                             Photo = "CaribeByFaranda.jpg",
@@ -270,6 +281,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Centro historico, Calle del Sargento No. 6 - 87, Centro",
                             CityId = 2L,
                             Description = "Dit moderne hotel ligt in het hart van de ommuurde stad Cartagena. Het bevindt zich in een gerenoveerd gebouw uit de 16e eeuw en beschikt over een dakterras met een zwembad en een gedeelde woonkamer. Het beschikt ook over een eigen gastronomisch restaurant en gratis WiFi.",
+                            Facilities = "Gratis wifi, luchthavenshuttle,bar,restaurant,gratis parkeergelegenheid,goed ontbijt",
                             Name = "Bastión Luxury Hotel",
                             NmbrOfRooms = 5,
                             Photo = "BastionLuxury.jpg",
@@ -281,6 +293,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Carrera 42 A No. 1 - 15, El Poblado, Medellín",
                             CityId = 3L,
                             Description = "San Fernando Plaza beschikt over een verwarmd buitenzwembad, een spa en een fitnesscentrum.Het biedt luxe accommodatie in El Poblado, de exclusieve financiële en commerciële wijk van Medellin.Het hotel heeft ook een restaurant en een bar.",
+                            Facilities = "Gratis wifi, luchthavenshuttle,bar,restaurant,airconditioning,goed ontbijt",
                             Name = "Hotel San Fernando Plaza",
                             NmbrOfRooms = 5,
                             Photo = "SanFernandoPlaza.jpg",
@@ -292,6 +305,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Carrera 45 # 49-35, La Candelaria, Medellín.",
                             CityId = 3L,
                             Description = "Hotel Suite 45 ligt in Medellin, op slechts 1 km van het metrostation Parque Berrio en biedt kamers met gratis WiFi en kabel-tv. Bij de accommodatie is gratis parkeergelegenheid beschikbaar. Het centrale plein en het Botero-plein liggen op 1 km afstand.",
+                            Facilities = "Gratis wifi,bar,restaurant,wasservice,goed ontbijt",
                             Name = "Hotel Suite 45",
                             NmbrOfRooms = 5,
                             Photo = "Suite45.jpg",
@@ -303,6 +317,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "3324 Carrera 65, Laureles, Medellín",
                             CityId = 3L,
                             Description = "Hotel Medellin 33 ligt op 2,9 km van Pueblito Paisa, in Medellín.Het biedt een aantal voorzieningen, waaronder een buitenzwembad, een fitnesscentrum en een terras.Tot de faciliteiten van deze accommodatie behoren een restaurant, een 24 - uursreceptie, een gemeenschappelijke lounge en gratis WiFi. De accommodatie beschikt over een hot tub, entertainmentpersoneel en roomservice.",
+                            Facilities = "Gratis wifi,rookvrije kamers,bar,restaurant,wasservice,goed ontbijt",
                             Name = "Hotel Medellin 33",
                             NmbrOfRooms = 5,
                             Photo = "Medellin33.jpg",
@@ -314,6 +329,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Carrera 32d # 9-17, El Poblado, Medellín.",
                             CityId = 3L,
                             Description = "Selina Medellin ligt in Medellín en biedt een terras, een gemeenschappelijke lounge, een restaurant, een 24 - uursreceptie, een gemeenschappelijke keuken en gratis WiFi. Voor een drankje kunt u terecht bij de bar.",
+                            Facilities = "Gratis wifi,rookvrije kamers,bar,restaurant,wasservice,goed ontbijt",
                             Name = "Selina Medellin",
                             NmbrOfRooms = 5,
                             Photo = "SelinaMedellin.jpg",
@@ -325,6 +341,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "CR 69 46B 34, Laureles, Medellín.",
                             CityId = 3L,
                             Description = "Mooie, schone kamers met een moderne badkamer. Op loopafstand van het metrostation en om de hoek van een gezellige uitgaansstraat in Medellin met leuke restaurants e.d.waar weinig toeristen komen en je dus meer tussen de locals zit. Top locatie!",
+                            Facilities = "Gratis wifi,rookvrije kamers,bar,restaurant,gratis parkeergelegenheid,wasservice,goed ontbijt",
                             Name = "HOTEL MED 70",
                             NmbrOfRooms = 5,
                             Photo = "Med70.jpg",
@@ -336,6 +353,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Av. 20 de Julio Nº 3A - 122, San Andrés.",
                             CityId = 4L,
                             Description = "San Andrés Hostel heeft kamers met airconditioning.Het ligt op slechts 5 minuten lopen van het strand en de zee van 7 kleuren.Er is een discobar bij de accommodatie en er zijn duiklessen beschikbaar. ",
+                            Facilities = "Gratis wifi,rookvrije kamers,bar,restaurant,gratis parkeergelegenheid,wasservice,goed ontbijt",
                             Name = "Viajero San Andres Hostel",
                             NmbrOfRooms = 5,
                             Photo = "ViajeroSanandresHostel.jpg ",
@@ -347,6 +365,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Calle 3 18 - 71 , San Andrés.",
                             CityId = 4L,
                             Description = "Deze elegante villa in mediterrane stijl heeft een buitenzwembad.U kunt er verblijven in kamers met airconditioning en gratis WiFi. Er is ook gratis privéparkeergelegenheid beschikbaar.",
+                            Facilities = "Gratis wifi,luchthavenshuttle,rookvrije kamers,bar,restaurant,gratis parkeergelegenheid,wasservice,goed ontbijt",
                             Name = "Le Castel Blanc Hotel Boutique",
                             NmbrOfRooms = 5,
                             Photo = "LeCastelBlanc.jpg",
@@ -358,6 +377,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Vía a San Luis # 43-39, San Andrés.",
                             CityId = 4L,
                             Description = "Hotel Cocoplum Beach ligt aan het Cocoplum - strand, een van de mooiste stranden van San Andrés. Het biedt een zwembad, een spa en een restaurant met uitzicht op zee. Er is gratis WiFi beschikbaar in de gemeenschappelijke ruimtes en het hotel serveert ontbijt.",
+                            Facilities = "Gratis wifi,rookvrije kamers,bar,gratis parkeergelegenheid,goed ontbijt",
                             Name = "Hotel Cocoplum Beach",
                             NmbrOfRooms = 5,
                             Photo = "CocoplumBeach.jpg",
@@ -369,6 +389,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Via San Luis, Antes de Rocky Cay Bay,  San Andrés.",
                             CityId = 4L,
                             Description = "San Luis Place By El Dorado ligt in San Andrés, in de omgeving van de eilanden San Andres en Providencia, op nog geen 3,5 km van San Andrés-baai, en beschikt over een zonneterras en een eigen strand.",
+                            Facilities = "Gratis wifi,rookvrije kamers,bar,restaurant,gratis parkeergelegenheid,airconditioning,goed ontbijt",
                             Name = "San Luis Place By El Dorado",
                             NmbrOfRooms = 5,
                             Photo = "ElDorado.jpg",
@@ -380,6 +401,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Via san luis, 880001 San Andrés.",
                             CityId = 4L,
                             Description = "Hostal Rohomar biedt gratis WiFi en uitzicht op zee in San Andrés. Het pension ligt op ongeveer 2,6 km van de baai van San Andres en op 3,5 km van North End. Lokale bezienswaardigheden zoals Spratt Bight en The Hill zijn bereikbaar binnen respectievelijk 3,7 km en 1,9 km.",
+                            Facilities = "Gratis wifi,rookvrije kamers,bar,gratis parkeergelegenheid,wasservice,goed ontbijt",
                             Name = "Hostal Rohomar",
                             NmbrOfRooms = 5,
                             Photo = "HostalRohomar.jpg",
@@ -391,6 +413,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Calle 16 # 5-17, Centro Histórico",
                             CityId = 5L,
                             Description = "Hotel Catedral Plaza ligt in Santa Marta in de regio Magdalena, op 5 km van het strand van El Rodadero. Het beschikt over een buitenbad en een zonneterras. Gasten kunnen genieten van de bar bij de accommodatie, en er wordt dagelijks een Amerikaans ontbijt aangeboden.",
+                            Facilities = "Gratis wifi,rookvrije kamers,bar,restaurant,gratis parkeergelegenhei,goed ontbijt",
                             Name = "Hotel Catedral Plaza",
                             NmbrOfRooms = 5,
                             Photo = "CatedralPlaza.jpg",
@@ -402,6 +425,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Km 17 vía a Cienaga",
                             CityId = 5L,
                             Description = "Het hotel ligt op slechts 100 meter van het strand van Pozos Colorados en beschikt over een zwembad, 2 tennisbanen en een discobar. U kunt dineren in een restaurant in de vorm van een piratenschip.",
+                            Facilities = "Gratis wifi,rookvrije kamers,bar,wasservice,goed ontbijt",
                             Name = "Decameron Galeon",
                             NmbrOfRooms = 5,
                             Photo = "DecameronGaleon.jpg",
@@ -413,6 +437,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Km 14 via a Cienaga. Bello Horizonte",
                             CityId = 5L,
                             Description = "Het Irotama Resort ligt op 100 meter van het strand en biedt op het terrein zelf watersportactiviteiten, 3 buitenzwembaden en een spa- en fitnesscentrum. Er is WiFi beschikbaar. Er worden ook activiteiten voor kinderen georganiseerd. Er is bovendien gratis vervoer vanaf de luchthaven mogelijk.",
+                            Facilities = "Gratis wifi,rookvrije kamers,bar,restaurant,gratis parkeergelegenheid,wasservice,luchthavenshuttle,goed ontbijt",
                             Name = "Irotama Resort",
                             NmbrOfRooms = 5,
                             Photo = "IrotamaResort.jpg",
@@ -424,6 +449,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Calle 11a No 6-136, El Rodadero, Cerro la Llorona",
                             CityId = 5L,
                             Description = "Bunsizanisi Hotel ligt in de wijk El Rodadero van Santa Marta en beschikt over kamers met gratis WiFi. Tot de verschillende faciliteiten van deze accommodatie behoren een buitenzwembad, een tuin en een terras. De accommodatie ligt op 700 m van het strand El Rodadero.",
+                            Facilities = "Gratis wifi,rookvrije kamers,bar,restaurant,gratis parkeergelegenheid,wasservice,goed ontbijt",
                             Name = "Bunsizanisi Hotel",
                             NmbrOfRooms = 5,
                             Photo = "Bunsizanisi.jpg",
@@ -435,6 +461,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                             Address = "Carrera 1C No. 24-04",
                             CityId = 5L,
                             Description = "Hilton Garden Inn Santa Marta bevindt zich in Santa Marta, en biedt een buitenzwembad, een fitnesscentrum, een tuin en gratis WiFi. De accommodatie ligt op 6 km van het strand van El Rodadero, op 200 meter van de jachthaven van Santa Marta en op 1 km van de kathedraal van Santa Marta. Het hotel beschikt over een gemeenschappelijke lounge.",
+                            Facilities = "Gratis wifi,rookvrije kamers,bar,restaurant,gratis parkeergelegenheid,zwembad,goed ontbijt",
                             Name = "Hilton Garden Inn Santa Marta",
                             NmbrOfRooms = 5,
                             Photo = "HiltonGardenInn.jpg",
@@ -1475,6 +1502,8 @@ namespace PE3_Adriana_Kenny.web.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("MaxPersoons");
+
                     b.Property<string>("Type")
                         .IsRequired();
 
@@ -1486,26 +1515,31 @@ namespace PE3_Adriana_Kenny.web.Migrations
                         new
                         {
                             Id = 1L,
+                            MaxPersoons = 2,
                             Type = "Suite met Uitzicht op Zee"
                         },
                         new
                         {
                             Id = 2L,
+                            MaxPersoons = 2,
                             Type = "Suite"
                         },
                         new
                         {
                             Id = 3L,
+                            MaxPersoons = 2,
                             Type = "Tweepersoonskamer"
                         },
                         new
                         {
                             Id = 4L,
+                            MaxPersoons = 3,
                             Type = "Driepersoonskamer"
                         },
                         new
                         {
                             Id = 5L,
+                            MaxPersoons = 2,
                             Type = "Tweepersoonskamer met 2 aparte bedden"
                         });
                 });
