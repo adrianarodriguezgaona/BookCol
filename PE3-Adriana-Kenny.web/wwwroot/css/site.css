@@ -205,7 +205,10 @@ footer div {
         
    }
 
-   #admin {width: 800px;
-           height: 600px;
-           border: 1px solid;
+
+   #adminEditDelete {display:inline-block;}
+
+   #adminAdd {display:inline-block;
+              vertical-align:top;
+              margin-top: 60px;
    }
