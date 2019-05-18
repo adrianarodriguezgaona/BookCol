@@ -167,3 +167,8 @@ footer {
    .btn {margin: 10px 15px;
         
    }
+
+   #admin {width: 800px;
+           height: 600px;
+           border: 1px solid;
+   }
