@@ -4,13 +4,14 @@
     @foreach (var hotel in Model.Hotels)
     {
         var city = hotel.City;
-        //var img = $"{hotel.Stars}.jpg";
+        
         <div class="fotos">
             <img class="fotosHotel" src="~/images/hotels/@hotel.Photo" alt="@hotel.Name" />
             <h3>@hotel.Name <img src="~/images/sterren/@(hotel.Stars).jpg" alt="@hotel.Stars" /></h3>
             <p>@city.Name</p>
             <p>@hotel.Description</p>
 
+            <p><a asp-controller="Hotel" asp-action="HotelDetails" asp-route-id="@hotel.Id">Meer details</a> </p>
 
         </div>
 

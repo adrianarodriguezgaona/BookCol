@@ -1,5 +1,7 @@
 ﻿@model HotelFilterHotelVM
 
+<section>
+
 <div id="filter">
     @await Html.PartialAsync("PartialViewFilter", Model)
 </div>
@@ -7,3 +9,4 @@
     @await Html.PartialAsync("PartialViewHotels", Model)
 
 </div>
+</section>

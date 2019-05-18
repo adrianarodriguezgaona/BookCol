@@ -1,0 +1,46 @@
+﻿@model HotelHotelDetailsVm
+
+@foreach (var hotel in Model.Hotels)
+{
+<div class="containerDetails">
+    <h3>@hotel.Name  <img src="~/images/sterren/@(hotel.Stars).jpg" alt="@hotel.Stars" /> </h3>
+    <img class="fotosHotel2" src="~/images/hotels/@hotel.Photo" alt="@hotel.Name" />
+    <p>@hotel.Description</p>
+    <h5 class="groen">Faciliteiten:</h5>
+    <p class="groen">@hotel.Facilities</p>
+</div>
+
+ <h5>Onze kamers:</h5>
+
+ <div class="table-responsive">
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th scope="col">Kamernr.</th>
+                    <th scope="col">Type kamer</th>
+                    <th scope="col">Geschikt voor</th>
+                    <th scope="col">Beschrijving</th>
+                    <th scope="col">Prijs per nacht</th>                  
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var room in Model.Rooms)
+                {
+                    var roomtype = room.Roomtype;
+                <tr>
+                    <th scope="row">@room.Id</th>
+                    <td>@roomtype.Type</td>
+                    <td><img src="~/images/persoons/@(roomtype.MaxPersoons).png" alt="@roomtype.MaxPersoons"/></td>
+                    <td>@room.Description</td>
+                    <td>€ @room.PriceNight</td>
+                   
+                </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>      
+    
+}
+
