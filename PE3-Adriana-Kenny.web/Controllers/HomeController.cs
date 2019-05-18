@@ -33,10 +33,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
         public IActionResult RegisterForm()
 
         {
-
             var vm = new Client();
-
-
             return View(vm);
 
 

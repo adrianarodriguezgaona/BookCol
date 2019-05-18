@@ -18,14 +18,6 @@ namespace PE3_Adriana_Kenny.web.Controllers
             bookingContext = context;
         }
 
-
-        public IActionResult FilterHotel()
-        {
-
-
-            return View();
-        }
-
         public IActionResult HotelDiv ( )
         {
             var vm = new HotelFilterHotelVM();
@@ -54,7 +46,21 @@ namespace PE3_Adriana_Kenny.web.Controllers
                         .OrderBy(c => c.Name)
                         .ToList();
                         
+            return View(vm);
+        }
 
+        public IActionResult HotelDetails(long id)
+        {
+            var vm = new HotelHotelDetailsVm();
+
+            vm.Hotels = bookingContext.Hotels
+                        .Where(h => h.Id == id)
+                        .ToList();
+
+            vm.Rooms = bookingContext.Rooms
+                     .Include (rt => rt.Roomtype)   
+                     .Where(r => r.HotelId == id)
+                     .ToList();
             return View(vm);
         }
 
@@ -62,19 +68,11 @@ namespace PE3_Adriana_Kenny.web.Controllers
         public IActionResult HotelByCity()
 
         {
-
             var stad = Request.Form["Stad"][0];
-
-
-
-
-
             Convert.ToInt64(stad);
-
-
-
-
             return RedirectToAction("HotelByCity", new { id = stad });
         }
+
+
     }
 }
