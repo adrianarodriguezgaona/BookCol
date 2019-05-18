@@ -19,37 +19,36 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <div>
+    
+    <div class="DivContainer">
 
-        <header class="top-header">
+        <header>
 
             <img src="~/images/Icoon/BookCol.png" />
             <h1>BookCol.com</h1>
-            
-             <div class="NavHome">
 
-                    <nav>
-                        <ul class="miNav">
-                            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                            <li><a asp-controller="Hotel" asp-action="HotelDiv">Hotels</a></li>
+            <div class="NavHome">
 
-                        </ul>
-                    </nav>
+                <nav>
+                    <ul class="miNav">
+                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-controller="Hotel" asp-action="HotelDiv">Hotels</a></li>
 
-             </div>
-             <div class="NavKlant">
+                    </ul>
+                </nav>
 
-                    <nav>
-                        <ul class="miNav">
-                            <li><a asp-controller="Home" asp-action="RegisterForm" class="nav-link">Registreren</a></li>
-                            <li><a >Inloggen</a></li>
+            </div>
+            <div class="NavKlant">
 
-                        </ul>
-                    </nav>
+                <nav>
+                    <ul class="miNav">
+                        <li><a asp-controller="Home" asp-action="RegisterForm" class="nav-link">Registreren</a></li>
+                        <li><a>Inloggen</a></li>
 
-             </div>
-            
+                    </ul>
+                </nav>
 
+            </div>
 
         </header>
         @RenderBody()

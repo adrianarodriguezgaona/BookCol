@@ -95,7 +95,8 @@ namespace PE3_Adriana_Kenny.web.Migrations
                         {
                             Id = 5L,
                             Description = "Santa Marta is een belangrijke havenstad in Colombia, maar ook reizigers mogen de stad zeker niet overslaan. Santa Marta is namelijk de perfecte uitvalsbasis om de diversiteit van de Caribische kust te ontdekken. Om te dwalen in de groene jungle en te relaxen aan de paradijselijke stranden. De stad ligt namelijk niet alleen aan de noordelijke kust, maar ook aan de voet van het gebergte Sierra Nevada de Santa Marta.",
-                            Name = "Santa Marta"
+                            Name = "Santa Marta",
+                            Photo = "SantaMarta.jpg"
                         });
                 });
 

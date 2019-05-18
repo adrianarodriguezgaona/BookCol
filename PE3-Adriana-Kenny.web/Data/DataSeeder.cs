@@ -64,7 +64,8 @@ namespace PE3_Adriana_Kenny.web.Data
                        Name = "Santa Marta",
                        Description = "Santa Marta is een belangrijke havenstad in Colombia, maar ook reizigers mogen de stad zeker niet overslaan. Santa Marta is namelijk de perfecte uitvalsbasis om de diversiteit van de Caribische kust te ontdekken."+"" +
                        " Om te dwalen in de groene jungle en te relaxen aan de paradijselijke stranden. De stad ligt namelijk niet alleen aan de noordelijke"+
-                       " kust, maar ook aan de voet van het gebergte Sierra Nevada de Santa Marta."
+                       " kust, maar ook aan de voet van het gebergte Sierra Nevada de Santa Marta.",
+                       Photo="SantaMarta.jpg"
                    });
 
 
@@ -101,8 +102,6 @@ namespace PE3_Adriana_Kenny.web.Data
                       Photo = "SelinaParque.jpg",
                       Facilities = "Gratis wifi, rookvrije kamers,restaurant,bar,goed ontbijt",
                       CityId = 1,
-
-
 
                   },
 
