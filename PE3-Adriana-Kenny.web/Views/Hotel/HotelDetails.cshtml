@@ -4,7 +4,9 @@
 {
 <div class="containerDetails">
     <h3>@hotel.Name  <img src="~/images/sterren/@(hotel.Stars).jpg" alt="@hotel.Stars" /> </h3>
-    <img class="fotosHotel2" src="~/images/hotels/@hotel.Photo" alt="@hotel.Name" />
+    <div class="imagenHotelDetails">
+        <img class="fotosHotel2" src="~/images/hotels/@hotel.Photo" alt="@hotel.Name" />
+    </div>
     <p>@hotel.Description</p>
     <h5 class="groen">Faciliteiten:</h5>
     <p class="groen">@hotel.Facilities</p>
