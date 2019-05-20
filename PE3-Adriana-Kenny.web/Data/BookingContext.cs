@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PE3_Adriana_Kenny.web.Models;
 
 namespace PE3_Adriana_Kenny.web.Data
 {
@@ -28,5 +29,6 @@ namespace PE3_Adriana_Kenny.web.Data
           
             base.OnModelCreating(modelBuilder);
         }
+
     }
 }
