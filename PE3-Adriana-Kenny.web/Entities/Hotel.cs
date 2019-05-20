@@ -13,13 +13,12 @@ namespace PE3_Adriana_Kenny.web.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
 
-        public long CityId { get; set; }
+        public long? CityId { get; set; }
 
         [Required]
         public string Name { get; set; }
 
         [Required]
-        [MaxLength(1)]
         public int Stars { get; set; }
 
         [Required]

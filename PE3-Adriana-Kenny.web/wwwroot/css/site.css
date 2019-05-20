@@ -209,3 +209,11 @@ footer div {
    .btn {margin: 10px 15px;
         
    }
+
+
+   #adminEditDelete {display:inline-block;}
+
+   #adminAdd {display:inline-block;
+              vertical-align:top;
+              margin-top: 60px;
+   }
