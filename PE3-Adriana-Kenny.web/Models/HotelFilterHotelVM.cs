@@ -8,10 +8,10 @@ namespace PE3_Adriana_Kenny.web.Models
 {
     public class HotelFilterHotelVM
     {
-        public string Stad { get; set; }
-        public int AantalSterren { get; set; }
-        public string SoortKamer { get; set; }
+        public long CityId { get; set; }
+        public int AmountStart { get; set; }
+        public string RoomType { get; set; }
         public List<Hotel> Hotels { get; set; }
-        public List<City> Steden { get; set; }
+        public List<City> Cities { get; set; }
     }
 }

@@ -1,13 +1,13 @@
 ﻿@model HotelFilterHotelVM
 
 
-<form id="FilterHotels" asp-controller="Hotel" asp-action="HotelByCity" method="post">
+<form id="FilterHotels" asp-controller="Hotel" asp-action="HotelByCityFilter" method="post">
     <div class="form-group">
-        <label asp-for="Stad">Stad</label><br />
+        <label asp-for="CityId">Stad</label><br />
 
-        @foreach (var stad in Model.Steden)
+        @foreach (var city in Model.Cities)
         {
-            <input asp-for="Stad" type="radio" value="@stad.Id" name="Stad" class="form-control check" />@stad.Name
+            <input asp-for="@city.Id" type="radio" value="@city.Id" name="CityId" class="form-control check" />@city.Name
             <br />
     }
         
