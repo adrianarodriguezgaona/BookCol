@@ -1,0 +1,30 @@
+﻿@model AdminIndexVM
+
+<h1>Voeg Kamers toe</h1>
+
+<h4>Kamers in het @Model.Hotel.Name</h4>
+
+<table class="dataoverzicht">
+
+    <tr>
+        <th>KamerTypeID</th>
+        <th>Kameromschrijving</th>
+        <th>Prijs per Nacht</th>
+
+    </tr>   
+    @foreach (var room in Model.Rooms)
+    {
+
+        <tr>
+            <td>@room.RoomTypeId</td>
+            <td width="800px">@room.Description</td>
+            <td>@room.PriceNight</td>
+            <td><a asp-action="EditRoom" asp-route-id="@room.Id">Edit</a></td>
+
+        </tr>
+    }
+
+</table>
+<form action="AddRooms" method="get">
+<button value="@Model.Hotel.Id" name="VoegKamerToe" class="btn btn-primary">Voeg Toe</button>
+</form>

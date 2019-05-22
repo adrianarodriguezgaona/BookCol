@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -59,10 +60,23 @@ namespace PE3_Adriana_Kenny.web
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>
+
             {
+
+                routes.MapRoute(
+
+                    name: "fillrooms",
+                    template: "Admin/EditRooms/{hotel}"
+
+
+                    );
+
+                                
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
             });
         }
     }
