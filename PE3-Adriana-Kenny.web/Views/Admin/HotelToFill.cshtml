@@ -20,11 +20,15 @@
             <td width="800px">@room.Description</td>
             <td>@room.PriceNight</td>
             <td><a asp-action="EditRoom" asp-route-id="@room.Id">Edit</a></td>
-
+           
+           
+                <td><a href="/Admin/DeleteR/@room.Id">Delete</a></td>
+                
         </tr>
     }
 
 </table>
-<form action="AddRooms" method="get">
-<button value="@Model.Hotel.Id" name="VoegKamerToe" class="btn btn-primary">Voeg Toe</button>
-</form>
+
+<form asp-action="AddRooms" method="get">
+<button value="@Model.Hotel.Id" name="hotelid"  class="btn btn-primary">Voeg kamer toe</button>
+    </form>

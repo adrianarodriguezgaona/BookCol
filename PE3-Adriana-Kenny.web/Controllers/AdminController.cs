@@ -43,6 +43,12 @@ namespace PE3_Adriana_Kenny.web.Controllers
             return RedirectToAction("AdminEditRemove", new { id = id });
         }
 
+        public IActionResult AddHotel()
+
+        { 
+            return View();
+        }
+
         public IActionResult AdminEditRemove(long id)
 
         {
@@ -118,29 +124,29 @@ namespace PE3_Adriana_Kenny.web.Controllers
         {
             var vm = new AdminIndexVM();
 
-          
-                vm.Hotel = bookingContext.Hotels.Find(id);
-            vm.Roomtypes = bookingContext.Roomtypes.OrderBy(r => r.Type).ToList();
+
+            vm.Hotel = bookingContext.Hotels.Find(id);
+            vm.Roomtypes = bookingContext.Roomtypes.OrderBy(r => r.Id).ToList();
             vm.Rooms = bookingContext.Rooms.Where(h => h.HotelId == id).ToList();
 
-                return View(vm);
-            
+            return View(vm);
+
         }
 
 
-        public IActionResult AddRooms(string VoegKamerToe)
+        public IActionResult AddRooms(string hotelId)
 
 
-           {
+        {
             var vm = new EditRoomsVM();
-            vm.HotelId = Convert.ToInt64(VoegKamerToe);
+            vm.HotelId = Convert.ToInt64(hotelId);
             vm.Roomtypes = bookingContext.Roomtypes.OrderBy(t => t.Type).ToList();
 
             return View(vm);
         }
 
 
-        
+
         [HttpPost]
 
         public IActionResult AddRooms(EditRoomsVM room)
@@ -151,7 +157,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
             var hotel = bookingContext.Hotels.Find(room.HotelId);
             hotel.NmbrOfRooms = aantalkamers + 1;
-            
+
             bookingContext.Rooms.Add(room);
             bookingContext.Update(hotel);
 
@@ -176,8 +182,34 @@ namespace PE3_Adriana_Kenny.web.Controllers
         }
 
 
+        [HttpPost]
+
+        public IActionResult EditRoom(EditRoomsVM editedRoom)
+
+        {
+
+            Room room = editedRoom.Room;
+
+            bookingContext.Rooms.Update(room);
+            bookingContext.SaveChanges();
+
+            return RedirectToAction("HotelToFill", new { id = room.HotelId });
+        }
 
 
+       
 
+        [HttpGet]
+        public IActionResult DeleteR(long id)
+
+        {
+
+            Room roomToDelete = bookingContext.Rooms.Find(id);
+
+            bookingContext.Remove(roomToDelete);
+            bookingContext.SaveChanges();
+
+            return RedirectToAction("HotelToFill", new { id = roomToDelete.HotelId });
+        }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PE3_Adriana_Kenny.web.Entities
 {
-    public class Room { 
+    public class Room {     
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
 
@@ -18,7 +18,7 @@ namespace PE3_Adriana_Kenny.web.Entities
         [Required]
         [MaxLength(350)]
         public string Description { get; set; }
-
+        
         [Required]
         public decimal PriceNight { get; set; }
 

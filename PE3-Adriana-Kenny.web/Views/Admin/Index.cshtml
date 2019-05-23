@@ -20,13 +20,16 @@
    </form>
 </div>
 
-<div id="adminAddHotel">
-    <h4>Voeg een nieuw hotel toe</h4>
- <button type="submit" class="btn btn-primary">Voeg een nieuw hotel toe</button>
+<form asp-action="AddHotel" method="post">
+    <div id="adminAddHotel">
+        <h4>Voeg een nieuw hotel toe</h4>
+        <button type="submit" class="btn btn-primary">Voeg een nieuw hotel toe</button>
+    </div>
 
 
+</form>
 
-</div>
+
 
 <div id="adminAddRooms">
     <h4>Vul de kamers in een te selecteren hotel</h4>

@@ -60,23 +60,8 @@ namespace PE3_Adriana_Kenny.web
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>
-
             {
-
-                routes.MapRoute(
-
-                    name: "fillrooms",
-                    template: "Admin/EditRooms/{hotel}"
-
-
-                    );
-
-                                
-
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
