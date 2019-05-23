@@ -104,16 +104,11 @@ namespace PE3_Adriana_Kenny.web.Controllers
         public ActionResult HotelNew(AdminIndexVM newHotel)
 
         {
-
             SaveHotelImage(newHotel.ImageToUpload);
             newHotel.Photo = uniqueFileName;
 
-
-
             bookingContext.Hotels.Add(newHotel);
             bookingContext.SaveChanges();
-
-
 
             return RedirectToAction("Index");
         }
@@ -123,7 +118,6 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
         {
             var vm = new AdminIndexVM();
-
 
             vm.Hotel = bookingContext.Hotels.Find(id);
             vm.Roomtypes = bookingContext.Roomtypes.OrderBy(r => r.Id).ToList();

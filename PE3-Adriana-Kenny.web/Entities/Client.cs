@@ -36,8 +36,22 @@ namespace PE3_Adriana_Kenny.web.Entities
         [EmailAddress]
         public string  Email { get; set; }
 
+        [Display(Name = "Paswoord")]
+        [DataType(DataType.Password)]
+        [Required]
+        [MinLength(8, ErrorMessage = "Het Paswoord moet minstens 8 karakters hebben!")]
+        public string Password { get; set; }
+
+        [Display(Name = "Herhaal het paswoord")]
+        [DataType(DataType.Password)]
+        [Compare(nameof(Password),ErrorMessage = " De paswoorden matchen niet")]
+        public string RepeatPassword { get; set; }
+
+        public bool IsAdmin { get; set; }
+
         // navigation property
         public List<Booking> Bookings { get; set; }
+
 
     }
 }
