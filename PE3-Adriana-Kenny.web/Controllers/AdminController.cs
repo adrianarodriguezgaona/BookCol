@@ -80,7 +80,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
             vm.CityList = bookingContext.Cities.OrderBy(c => c.Name).ToList();
             return View(vm);
 
-}
+        }
         string uniqueFileName;
 
         private string SaveHotelImage(IFormFile file)
@@ -102,8 +102,6 @@ namespace PE3_Adriana_Kenny.web.Controllers
                 SaveHotelImage(nieuwHotel.ImageToUpload);
             nieuwHotel.Photo = uniqueFileName;
 
-
-
             bookingContext.Hotels.Add(nieuwHotel);
             bookingContext.SaveChanges();
 
@@ -111,6 +109,8 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
             return Redirect("index");
         }
+
+
 
 
 

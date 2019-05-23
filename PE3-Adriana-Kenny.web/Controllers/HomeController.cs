@@ -40,6 +40,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
         }
 
         [HttpPost]
+
         [ValidateAntiForgeryToken]
         public IActionResult RegisterForm(Client client)
         {
