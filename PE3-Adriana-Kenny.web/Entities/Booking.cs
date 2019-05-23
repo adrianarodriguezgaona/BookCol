@@ -22,7 +22,7 @@ namespace PE3_Adriana_Kenny.web.Entities
         public long ClientId { get; set; }
         public long RoomId { get; set; }
 
-        [MaxLength(1)]
+        
         public int NmbrOfPeople { get; set; }
 
         //navigation properties
