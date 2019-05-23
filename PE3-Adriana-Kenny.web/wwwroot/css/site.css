@@ -120,7 +120,14 @@ p {font-size:14px;
     margin:20px 5px 20px 5px;
 }
 
+.boekNu {
+    width: 25%;
+    background-color: #2a4f89;
+}
 
+.boekNu a{
+    color:white;
+}
 .CityCard {
     width: 250px;
     margin-right: 100px;
