@@ -205,8 +205,13 @@ namespace PE3_Adriana_Kenny.web.Controllers
         {
 
             Room roomToDelete = bookingContext.Rooms.Find(id);
+            Hotel hotel = bookingContext.Hotels.Find(roomToDelete.HotelId);
+            hotel.NmbrOfRooms--;
 
+
+            bookingContext.Update(hotel);
             bookingContext.Remove(roomToDelete);
+            
             bookingContext.SaveChanges();
 
             return RedirectToAction("HotelToFill", new { id = roomToDelete.HotelId });
