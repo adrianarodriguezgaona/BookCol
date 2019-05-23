@@ -1,0 +1,43 @@
+﻿@model EditRoomsVM
+
+<form asp-action="EditRoom" method="post">
+    <input asp-for="Room.Id" type="hidden" />;
+           
+    <div class="form-group">
+        <input asp-for="Room.HotelId" type="hidden" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Room.RoomTypeId"></label>
+
+        <select asp-for="Room.RoomTypeId">
+            {
+            @foreach (var type in Model.Roomtypes)
+            {
+
+                if (type.Id == Model.Room.RoomTypeId)
+                {
+                    <option value="@Model.Room.RoomTypeId" selected>@type.Type</option>
+
+                }
+                else
+                {
+                    <option>@type.Type</option>
+
+              
+            }
+            }
+
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Room.Description"></label>
+        <input asp-for="Room.Description" value="@Model.Room.Description" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Room.PriceNight"></label>
+        <input asp-for="Room.PriceNight" value="@Model.Room.PriceNight" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Wijzig kamer" class="btn btn-primary" />
+    </div>
+</form>

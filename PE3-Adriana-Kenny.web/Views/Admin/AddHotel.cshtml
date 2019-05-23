@@ -1,24 +1,12 @@
-﻿@model AdminIndexVM
-@{
-    ViewData["Title"] = "HotelNew";
-}
+﻿@model Hotel
 
-<form id="hotelNew" asp-action="HotelNew" enctype="multipart/form-data" method="post">
+
+<form id="EditRemove" asp-controller="Admin" asp-action="HotelEdit">
+
 
     <input asp-for="Id" type="hidden" />
-
-
-    <div class="form-group">
-
-        <select asp-for="CityId">
-            @foreach (var city in Model.CityList)
-            {
-                <option value="@city.Id">@city.Name</option>
-            }
-
-        </select>
-
-    </div>
+    <input asp-for="CityId" type="hidden" />
+    <input asp-for="Photo" type="hidden" />
 
     <div class="form-group">
         <label asp-for="Name">Naam</label>
@@ -55,15 +43,5 @@
         <textarea asp-for="Facilities" class="form-control"></textarea>
     </div>
 
-    <label asp-for="ImageToUpload">Kies een afbeelding</label> 
-    <input type="file" asp-for="ImageToUpload" />       
-    <p>             
-    <span asp-validation-for="ImageToUpload" class="text-danger"></span>         
-    </p>     
-    </div>
-
-
-
-    <button type="submit" value="Opslaan" name="submitButton" class="btn btn-secondary">Opslaan</button>
-
-</form>
+    <button type="submit" value="Wijzigen" name="submitButton" class="btn btn-secondary">Toevoegen</button>
+    </form>

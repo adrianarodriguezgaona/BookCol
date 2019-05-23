@@ -3,7 +3,7 @@
 
 <div id="adminEditDelete">
 
-   <p>Selecteer hotel die je wil wijzigen of verwijderen</p>
+   <h4>Selecteer hotel die je wil wijzigen of verwijderen</h4>
 
    <form id="AdminStart" asp-controller="Admin" asp-action="Index" method="post">
            <select asp-for="Id">
@@ -20,10 +20,36 @@
    </form>
 </div>
 
-<div id="adminAdd">
+<form asp-action="AddHotel" method="post">
+    <div id="adminAddHotel">
+        <h4>Voeg een nieuw hotel toe</h4>
+        <button type="submit" class="btn btn-primary">Voeg een nieuw hotel toe</button>
+    </div>
 
- <button type="submit" class="btn btn-primary">Voeg een nieuw hotel toe</button>
 
+</form>
+
+
+
+<div id="adminAddRooms">
+    <h4>Vul de kamers in een te selecteren hotel</h4>
+
+    <form id="AdminAddHotel" asp-controller="Admin" asp-action="HotelToFill" method="post">
+
+        <select asp-for="@Model.Id">
+            @foreach (var hotel in @Model.Hotels)
+            {
+
+                <option value="@hotel.Id">@hotel.Name</option>
+            }
+
+        </select>
+    
+
+        <button type="submit" class="btn btn-primary">
+            Selecteer
+        </button>
+    </form>
 
 
 </div>

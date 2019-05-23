@@ -27,12 +27,12 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
         public IActionResult Index()
 
-      
+
         {
             var vm = new AdminIndexVM();
-                vm.Hotels = bookingContext.Hotels.OrderBy(h => h.Name).ToList();
+            vm.Hotels = bookingContext.Hotels.OrderBy(h => h.Name).ToList();
 
-                return View(vm);
+            return View(vm);
         }
 
         [HttpPost]
@@ -43,12 +43,18 @@ namespace PE3_Adriana_Kenny.web.Controllers
             return RedirectToAction("AdminEditRemove", new { id = id });
         }
 
+        public IActionResult AddHotel()
+
+        { 
+            return View();
+        }
+
         public IActionResult AdminEditRemove(long id)
 
         {
             var vm = new Hotel();
 
-                vm = bookingContext.Hotels.Find(id);
+            vm = bookingContext.Hotels.Find(id);
 
             return View(vm);
         }
@@ -75,7 +81,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
         }
         public IActionResult HotelNew()
         {
-            var vm = new HotelNewVM();
+            var vm = new AdminIndexVM();
 
             vm.CityList = bookingContext.Cities.OrderBy(c => c.Name).ToList();
             return View(vm);
@@ -85,42 +91,130 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
         private string SaveHotelImage(IFormFile file)
         {
-             uniqueFileName = file.FileName;
+            uniqueFileName = file.FileName;
             string savePath = Path.Combine(_env.WebRootPath, "images", "hotels", uniqueFileName);
 
-            using (var newfileStream = new FileStream(savePath, FileMode.Create)) {  file.CopyTo(newfileStream); }
+            using (var newfileStream = new FileStream(savePath, FileMode.Create)) { file.CopyTo(newfileStream); }
             return uniqueFileName;
         }
 
 
         [HttpPost]
 
-        public ActionResult HotelNew(HotelNewVM nieuwHotel)
-            
-        {
-        
-                SaveHotelImage(nieuwHotel.ImageToUpload);
-            nieuwHotel.Photo = uniqueFileName;
+        public ActionResult HotelNew(AdminIndexVM newHotel)
 
-            bookingContext.Hotels.Add(nieuwHotel);
+        {
+
+            SaveHotelImage(newHotel.ImageToUpload);
+            newHotel.Photo = uniqueFileName;
+
+
+
+            bookingContext.Hotels.Add(newHotel);
             bookingContext.SaveChanges();
 
 
 
-            return Redirect("index");
+            return RedirectToAction("Index");
+        }
+
+
+        public IActionResult HotelToFill(long id)
+
+        {
+            var vm = new AdminIndexVM();
+
+
+            vm.Hotel = bookingContext.Hotels.Find(id);
+            vm.Roomtypes = bookingContext.Roomtypes.OrderBy(r => r.Id).ToList();
+            vm.Rooms = bookingContext.Rooms.Where(h => h.HotelId == id).ToList();
+
+            return View(vm);
+
+        }
+
+
+        public IActionResult AddRooms(string hotelId)
+
+
+        {
+            var vm = new EditRoomsVM();
+            vm.HotelId = Convert.ToInt64(hotelId);
+            vm.Roomtypes = bookingContext.Roomtypes.OrderBy(t => t.Type).ToList();
+
+            return View(vm);
         }
 
 
 
+        [HttpPost]
+
+        public IActionResult AddRooms(EditRoomsVM room)
+
+        {
+
+            var aantalkamers = bookingContext.Rooms.Count(r => r.HotelId == room.HotelId);
+
+            var hotel = bookingContext.Hotels.Find(room.HotelId);
+            hotel.NmbrOfRooms = aantalkamers + 1;
+
+            bookingContext.Rooms.Add(room);
+            bookingContext.Update(hotel);
 
 
 
+            bookingContext.SaveChanges();
 
-        
-        
-        
+            return RedirectToAction("HotelToFill", new { id = room.HotelId });
+
+        }
 
 
+        public IActionResult EditRoom(long id)
+        {
+            var vm = new EditRoomsVM();
 
+            vm.Room = bookingContext.Rooms.Find(id);
+            vm.Roomtypes = bookingContext.Roomtypes.OrderBy(r => r.Type).ToList();
+
+            return View(vm);
+
+        }
+
+
+        [HttpPost]
+
+        public IActionResult EditRoom(EditRoomsVM editedRoom)
+
+        {
+
+            Room room = editedRoom.Room;
+
+            bookingContext.Rooms.Update(room);
+            bookingContext.SaveChanges();
+
+            return RedirectToAction("HotelToFill", new { id = room.HotelId });
+        }
+
+
+       
+
+        [HttpGet]
+        public IActionResult DeleteR(long id)
+
+        {
+
+            Room roomToDelete = bookingContext.Rooms.Find(id);
+            Hotel hotel = bookingContext.Hotels.Find(roomToDelete.HotelId);
+            hotel.NmbrOfRooms--;
+
+
+            bookingContext.Update(hotel);
+            bookingContext.Remove(roomToDelete);
+            
+            bookingContext.SaveChanges();
+
+            return RedirectToAction("HotelToFill", new { id = roomToDelete.HotelId });
+        }
     }
 }

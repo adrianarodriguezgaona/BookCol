@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PE3_Adriana_Kenny.web.Migrations
 {
-    public partial class init : Migration
+    public partial class INIT : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -62,9 +62,9 @@ namespace PE3_Adriana_Kenny.web.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CityId = table.Column<long>(nullable: false),
+                    CityId = table.Column<long>(nullable: true),
                     Name = table.Column<string>(nullable: false),
-                    Stars = table.Column<int>(maxLength: 1, nullable: false),
+                    Stars = table.Column<int>(nullable: false),
                     Address = table.Column<string>(maxLength: 250, nullable: false),
                     NmbrOfRooms = table.Column<int>(nullable: false),
                     Photo = table.Column<string>(nullable: true),
@@ -79,7 +79,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                         column: x => x.CityId,
                         principalTable: "Cities",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(

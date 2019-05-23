@@ -10,8 +10,8 @@ using PE3_Adriana_Kenny.web.Data;
 namespace PE3_Adriana_Kenny.web.Migrations
 {
     [DbContext(typeof(BookingContext))]
-    [Migration("20190517085818_init")]
-    partial class init
+    [Migration("20190522131720_INIT")]
+    partial class INIT
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -143,7 +143,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                         .IsRequired()
                         .HasMaxLength(250);
 
-                    b.Property<long>("CityId");
+                    b.Property<long?>("CityId");
 
                     b.Property<string>("Description")
                         .IsRequired();
@@ -157,8 +157,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
 
                     b.Property<string>("Photo");
 
-                    b.Property<int>("Stars")
-                        .HasMaxLength(1);
+                    b.Property<int>("Stars");
 
                     b.HasKey("Id");
 
@@ -1561,8 +1560,7 @@ namespace PE3_Adriana_Kenny.web.Migrations
                 {
                     b.HasOne("PE3_Adriana_Kenny.web.Entities.City", "City")
                         .WithMany("Hotels")
-                        .HasForeignKey("CityId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CityId");
                 });
 
             modelBuilder.Entity("PE3_Adriana_Kenny.web.Entities.Room", b =>
