@@ -1,0 +1,11 @@
+﻿@model BookingCreatePostVM
+
+@foreach (var client in Model.Clients)
+{
+    <h2> Hallo @client.Surname  @client.Name Jouw Booking is een feit!!</h2>
+
+    <p>Bookingnr = @Model.Booking.Id</p>
+
+
+    <p>Aantal dagen = @ViewBag.days</p>
+}
