@@ -38,6 +38,9 @@ namespace PE3_Adriana_Kenny.web
                options.UseSqlServer(Configuration.GetConnectionString("BookingDb")));
 
 
+            services.AddMemoryCache();
+            services.AddSession();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -58,6 +61,7 @@ namespace PE3_Adriana_Kenny.web
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseSession();
 
             app.UseMvc(routes =>
             {

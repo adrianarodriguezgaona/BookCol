@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using PE3_Adriana_Kenny.web.Data;
 using PE3_Adriana_Kenny.web.Entities;
 using PE3_Adriana_Kenny.web.Models;
+using System.Security.Cryptography;
 
 namespace PE3_Adriana_Kenny.web.Controllers
 {
@@ -44,6 +45,9 @@ namespace PE3_Adriana_Kenny.web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult RegisterForm(Client client)
         {
+            MD5 hash = MD5.Create();
+           var passToBytes = System.Text.Encoding.ASCII.GetBytes(client.Password);
+           var hashBytes = hash.ComputeHash(passToBytes);
 
             if (ModelState.IsValid)
 
