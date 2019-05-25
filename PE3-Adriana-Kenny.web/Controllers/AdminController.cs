@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 using PE3_Adriana_Kenny.web.Data;
 using PE3_Adriana_Kenny.web.Entities;
 using PE3_Adriana_Kenny.web.Models;
+using PE3_Adriana_Kenny.web.Constants;
+using Newtonsoft.Json;
 
 namespace PE3_Adriana_Kenny.web.Controllers
 {
@@ -25,15 +27,37 @@ namespace PE3_Adriana_Kenny.web.Controllers
             _env = env;
         }
 
+
+
+
         public IActionResult Index()
-
-
+            
         {
-            var vm = new AdminIndexVM();
-            vm.Hotels = bookingContext.Hotels.OrderBy(h => h.Name).ToList();
+            var SessionUser = HttpContext.Session.GetString(Constants.Constants.Statekey);
 
-            return View(vm);
-        }
+            if (SessionUser == null)
+
+            { return RedirectToAction("LoginForm", "Home"); }
+
+            else
+            {
+
+                var userState = JsonConvert.DeserializeObject<UserState>(SessionUser);
+                var vm = new AdminIndexVM();
+
+                if (userState.IsAdmin)
+
+                {
+                    
+                    vm.Hotels = bookingContext.Hotels.OrderBy(h => h.Name).ToList();
+
+                  
+                }
+                return View(vm);
+            }
+           
+        } 
+
 
         [HttpPost]
         public IActionResult Index(long id)

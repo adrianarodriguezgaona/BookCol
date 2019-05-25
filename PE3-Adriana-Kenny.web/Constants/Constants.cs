@@ -7,6 +7,6 @@ namespace PE3_Adriana_Kenny.web.Constants
 {
     public static class Constants
     {
-        public const string Statekey = "SessionUser";
+        public const string Statekey = "ik ben de statekey, maar kan alles zijn";
     }
 }
