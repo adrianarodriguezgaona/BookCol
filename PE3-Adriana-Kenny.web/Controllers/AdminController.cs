@@ -27,9 +27,6 @@ namespace PE3_Adriana_Kenny.web.Controllers
             _env = env;
         }
 
-
-
-
         public IActionResult Index()
             
         {

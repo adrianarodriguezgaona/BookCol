@@ -14,3 +14,4 @@ namespace PE3_Adriana_Kenny.web.Models
         public List<Hotel>Hotels { get; set; }
     }
 }
+
