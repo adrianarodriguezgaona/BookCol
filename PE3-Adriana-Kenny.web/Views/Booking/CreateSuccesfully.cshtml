@@ -2,10 +2,48 @@
 
 @foreach (var client in Model.Clients)
 {
-    <h2> Hallo @client.Surname  @client.Name Jouw Booking is een feit!!</h2>
+    <h2> Hallo @client.Surname  @client.Name Jouw reservatie is een feit!!</h2>
 
-    <p>Bookingnr = @Model.Booking.Id</p>
+    <p>
+        U vindt hieronder al de informatie i.v.m. uw reservatie. Noteer goed al de gegevens. 
+        Voor wijzigen of annulatie in uw reservatie neem contact met ons via e-mail naar bookingen@bookcol.com en gebruik als referentie het reservatienummer.
+    </p>
 
 
-    <p>Aantal dagen = @ViewBag.days</p>
+    <table class="table table-borderless">
+       
+        <tbody>
+            @foreach (var booking in Model.Bookings)
+            {
+
+                var room = booking.Room;
+                var totaal = ViewBag.days * room.PriceNight;
+                <tr>
+                    <th scope="row">Reservatienummer:</th>
+                    <td>@booking.Id</td>
+                </tr>
+                <tr>
+                    <th scope="row">Kamernummer:</th>
+                    <td>@booking.RoomId</td>
+                </tr>
+                <tr>
+                    <th scope="row">Inchecken:</th>
+                    <td>@booking.CheckInDate</td>
+                </tr>
+                <tr>
+                    <th scope="row">Uitchecken:</th>
+                    <td>@booking.CheckOutDate</td>
+                </tr>
+                <tr>
+                    <th scope="row">Aantal nachten:</th>
+                    <td>@ViewBag.days</td>
+                </tr>
+                <tr>
+                    <th scope="row">Te betalen (betaling gebeurd ter plaatse):</th>
+                    <td>€ @totaal</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
 }

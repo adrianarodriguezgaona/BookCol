@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PE3_Adriana_Kenny.web.Data;
 using PE3_Adriana_Kenny.web.Entities;
 using PE3_Adriana_Kenny.web.Models;
@@ -29,7 +30,6 @@ namespace PE3_Adriana_Kenny.web.Controllers
             vm.Rooms = bookingContext.Rooms                     
                      .Where(r => r.HotelId == hotelId)
                      .ToList();
-
                        return View(vm);           
         }
 
@@ -50,8 +50,12 @@ namespace PE3_Adriana_Kenny.web.Controllers
                            .Where(c => c.Id == newBooking.ClientId)
                            .ToList();
 
-                vm.Booking = newBooking;
-               
+
+                vm.Bookings = bookingContext.Booking
+                             .Include (b => b.Room)
+                             .Where(b => b.Id == newBooking.Id)                            
+                             .ToList();
+
                 TimeSpan tspan = newBooking.CheckOutDate - newBooking.CheckInDate;
                     
                 ViewBag.Days = tspan.Days;

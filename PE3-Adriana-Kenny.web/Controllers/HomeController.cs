@@ -146,11 +146,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
                     return RedirectToAction("LogInSucces", "Home");
                 }
 
-
-
-
             }
-
 
 
             return RedirectToAction("LogInFail", "Home");
