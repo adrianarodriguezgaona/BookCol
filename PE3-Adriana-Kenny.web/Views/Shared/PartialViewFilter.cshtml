@@ -9,8 +9,21 @@
         {
             <input asp-for="@city.Id" type="radio" value="@city.Id" name="CityId" class="form-control check" />@city.Name
             <br />
-    }
+        }
         
+        </div>
+
+        <div class="form-group">
+           
+            <input asp-for="StarsChecked[0]" type="checkbox"/> 2 sterren
+            <input asp-for="StarsChecked[1]" type="checkbox" /> 3 sterren
+            <input asp-for="StarsChecked[2]" type="checkbox" /> 4 sterren
+            <input asp-for="StarsChecked[3]" type="checkbox" /> 5 sterren 
+
+        </div>
+
+
+
         <button type="submit" class="btn btn-primary">Filter</button>
     </div>
 </form>
