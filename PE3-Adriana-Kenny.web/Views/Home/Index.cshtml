@@ -5,20 +5,18 @@
 <div class="info">
 
 
-
-
     <p>
-        Colombia has major attractions for a tourist destination, such as Cartagena and its historic surroundings,
-        which are on the UNESCO World Heritage List; the insular department of San Andrés, Providencia y Santa Catalina;
-        and Santa Marta and the surrounding area. The coffee region is also a very popular destination, especially the
-        city of Armenia and its surroundings. Fairly recently, Bogotá, the nation's capital, has become Colombia's major
-        tourist destination because of its improved museums and entertainment facilities and its major urban renovations,
-        including the rehabilitation of public areas, the development of parks, and the creation of an extensive network of
-        cycling routes. With its very rich and varied geography, which includes the Amazon and Andean regions, the llanos,
-        the Caribbean and Pacific coasts, and the deserts of La Guajira and Tatacoa Desert, and its unique biodiversity,
-        Colombia also has major potential for ecotourism.
+        Welkome op BookCol.com! de website waar je moet zijn als je een Hotel in Colombia wilt boeken. De hotels dat we aanbieden,
+        hebben we zelf getest dat betekent dat we enkel top-kwaliteit aanbieden.<br />
+        <strong>Colombia</strong> is een fascinerende bestemming die sinds kort op kleine schaal door het toerisme wordt ontdekt. Het is een land met veel gezichten.
+        U vindt er o.a. besneeuwde bergtoppen, woestijnlandschappen, oerwouden, mangroven, kleine bergdorpjes en veel kleurrijke kunst.
+        Daarnaast heeft Colombia een lange kustlijn met helder blauw water en mooie zandstranden waar u diverse watersporten kunt beoefenen, zoals duiken.
+        Colombia staat verder nog bekend om de productie van koffiebonen, bananen en sigaren. Dit alles maakt van Colombia een must voor elke reisfanaat.<br />
+        <strong>De geheime tip van Zuid-Amerika</strong><br />
+        Colombia wordt steeds populairder als reisbestemming. En wij begrijpen waarom. We laten ons charmeren door de vitaliteit van de Colombianen,
+        dompelen ons onder in de wereld van hoogstaande Colombiaanse koffie, ontdekken het innovatieve Medellin en ontspannen lekker in Cartagena aan de Caribische kust.
+        Welkom in Colombia!
     </p>
-
 
 
 
@@ -39,15 +37,17 @@
         @foreach (var city in Model.Cities)
         {
 
-            <div class="CityCard">
+        <div class="CityCard">
 
-                <img src="~/images/cities/@city.Photo" />
+            <a asp-controller="Hotel" asp-action="HotelByCity" asp-route-id="@city.Id">
+                <img src="~/images/cities/@city.Photo" /></a>
 
-                <h3>@city.Name</h3>
+                <h5>@city.Name</h5>
+                <a asp-controller="Hotel" asp-action="HotelByCity" asp-route-id="@city.Id">Hotels</a>
                 <p>@city.Description</p>
                 <hr />
 
-            </div>
+</div>
         }
     </div>
 

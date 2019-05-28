@@ -128,7 +128,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
                     userState.IsLoggedIn = true;
                     userState.IsAdmin = true;
-                    
+                    userState.Client.Email = login.Email;
                     HttpContext.Session.SetString(Constants.Constants.Statekey, JsonConvert.SerializeObject(userState));
 
 
