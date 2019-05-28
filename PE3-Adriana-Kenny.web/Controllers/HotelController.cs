@@ -41,19 +41,15 @@ namespace PE3_Adriana_Kenny.web.Controllers
         {
        var templist = Enumerable.Empty<Hotel>().AsQueryable();
 
-
             var filteredHotels = bookingContext.Hotels.Where(h => h.CityId == vm.CityId);
 
             
-
             if (vm.StarsChecked[0] == true && filteredHotels.Where(h => h.Stars == 2) != null)
 
             {
                templist = templist.Concat(filteredHotels.Where(h => h.Stars == 2));
 
-
             }
-
 
             if (vm.StarsChecked[1] == true && filteredHotels.Where(h => h.Stars == 3) != null)
 
@@ -110,10 +106,6 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
         {
             
-
-
-
-
             return RedirectToAction("HotelByCity", vm);
         }
 
