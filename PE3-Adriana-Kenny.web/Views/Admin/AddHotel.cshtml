@@ -1,6 +1,8 @@
 ﻿@model Hotel
 
-
+@{
+    Layout = "_AdminLayout";
+}
 
 <form id="EditRemove" asp-controller="Admin" asp-action="HotelEdit">
 
@@ -45,4 +47,4 @@
     </div>
 
     <button type="submit" value="Wijzigen" name="submitButton" class="btn btn-secondary">Toevoegen</button>
-    </form>
+</form>

@@ -1,4 +1,9 @@
 ﻿@model AdminIndexVM
+
+@{
+    Layout = "_AdminLayout";
+}
+
 @{
     ViewData["Title"] = "HotelNew";
 }
@@ -55,11 +60,11 @@
         <textarea asp-for="Facilities" class="form-control"></textarea>
     </div>
 
-    <label asp-for="ImageToUpload">Kies een afbeelding</label> 
-    <input type="file" asp-for="ImageToUpload" />       
-    <p>             
-    <span asp-validation-for="ImageToUpload" class="text-danger"></span>         
-    </p>     
+    <label asp-for="ImageToUpload">Kies een afbeelding</label>
+    <input type="file" asp-for="ImageToUpload" />
+    <p>
+        <span asp-validation-for="ImageToUpload" class="text-danger"></span>
+    </p>
 
 
 

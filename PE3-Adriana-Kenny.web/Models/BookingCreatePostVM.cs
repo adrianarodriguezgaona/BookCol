@@ -9,7 +9,7 @@ namespace PE3_Adriana_Kenny.web.Models
     public class BookingCreatePostVM 
     {
        
-        public List<Client>Clients { get; set; }
+        public Client Client { get; set; }
         public List<Booking> Bookings{ get; set; }
     }
 }

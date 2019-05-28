@@ -1,8 +1,12 @@
 ﻿@model EditRoomsVM
 
+@{
+    Layout = "_AdminLayout";
+}
+
 <form asp-action="EditRoom" method="post">
     <input asp-for="Room.Id" type="hidden" />;
-           
+
     <div class="form-group">
         <input asp-for="Room.HotelId" type="hidden" class="form-control" />
     </div>
@@ -23,8 +27,8 @@
                 {
                     <option>@type.Type</option>
 
-              
-            }
+
+                }
             }
 
         </select>

@@ -1,11 +1,13 @@
 ﻿@model BookingCreatePostVM
 
-@foreach (var client in Model.Clients)
-{
-    <h2> Hallo @client.Surname  @client.Name Jouw reservatie is een feit!!</h2>
 
-    <p>
-        U vindt hieronder al de informatie i.v.m. uw reservatie. Noteer goed al de gegevens. 
+
+<p>
+    <strong>  @Model.Client.Surname  @Model.Client.Name </strong> Wij danken u voor het vertrouwen in onze firma. Gelieve onderstaande informatie zorgvuldig na te lezen.
+
+</p>
+
+    <p> 
         Voor wijzigen of annulatie in uw reservatie neem contact met ons via e-mail naar bookingen@bookcol.com en gebruik als referentie het reservatienummer.
     </p>
 
@@ -46,4 +48,3 @@
         </tbody>
     </table>
 
-}

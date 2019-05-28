@@ -1,15 +1,14 @@
 ﻿@model HotelHotelDetailsVm
 
-@foreach (var hotel in Model.Hotels)
-{
+
     <div class="containerDetails">
-        <h3>@hotel.Name  <img src="~/images/sterren/@(hotel.Stars).jpg" alt="@hotel.Stars" /> </h3>
+        <h3>@Model.Hotel.Name  <img src="~/images/sterren/@(Model.Hotel.Stars).jpg" alt="@Model.Hotel.Stars" /> </h3>
         <div class="imagenHotelDetails">
-            <img class="fotosHotel2" src="~/images/hotels/@hotel.Photo" alt="@hotel.Name" />
+            <img class="fotosHotel2" src="~/images/hotels/@Model.Hotel.Photo" alt="@Model.Hotel.Name" />
         </div>
-        <p>@hotel.Description</p>
+        <p>@Model.Hotel.Description</p>
         <h5 class="groen">Faciliteiten:</h5>
-        <p class="groen">@hotel.Facilities</p>
+        <p class="groen">@Model.Hotel.Facilities</p>
     </div>
 
     <h5>Onze kamers:</h5>
@@ -44,7 +43,7 @@
         </table>
     </div>
 
-    <div class="boekNu"> <a asp-controller="Booking" asp-action="Create" asp-route-hotelId="@hotel.Id">Reserveer nu</a> </div>
+    <div class="boekNu"> <a asp-controller="Booking" asp-action="Create" asp-route-hotelId="@Model.Hotel.Id">Reserveer nu</a> </div>
 
-}
+
 
