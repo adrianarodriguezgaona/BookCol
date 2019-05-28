@@ -21,12 +21,12 @@ namespace PE3_Adriana_Kenny.web.Components
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            ViewBag.SessionUser = HttpContext.Session.GetString(Constants.Constants.Statekey);
-            ViewBag.UserState = JsonConvert.DeserializeObject<UserState>(ViewBag.SessionUser);
-                             
-                return View();
-            }
+            return View();
+
+
+
 
         }
     }
-}
+    }
+

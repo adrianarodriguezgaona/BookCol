@@ -1,17 +1,7 @@
-﻿@if (ViewBag.SessionUser == null)
-{
+﻿
     <ul class="miNav">
         <li><a asp-controller="Home" asp-action="RegisterForm" class="nav-link">Registreren</a></li>
         <li><a asp-controller="Home" asp-action="LoginForm">Inloggen</a></li>
 
     </ul>
-}
 
-else
-{
-    <ul class="miNav">
-        <li>@ViewBag.UserState.Client.Email</li>
-        <li>uitloggen</li>
-
-    </ul>
-}

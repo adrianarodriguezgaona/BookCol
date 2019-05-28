@@ -117,6 +117,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
                 var existingUser = bookingContext.Clients.FirstOrDefault(c => c.Email == login.Email && c.Password == login.Password);
                 UserState userState = new UserState();
+
                 if (existingUser == null)
                 { return RedirectToAction("LoginForm", "Home"); }
 
@@ -128,7 +129,6 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
                     userState.IsLoggedIn = true;
                     userState.IsAdmin = true;
-                    userState.Client.Email = login.Email;
                     HttpContext.Session.SetString(Constants.Constants.Statekey, JsonConvert.SerializeObject(userState));
 
 

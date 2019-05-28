@@ -17,5 +17,7 @@ namespace PE3_Adriana_Kenny.web.Models
         [Required]
         [MinLength(8, ErrorMessage = "Het Paswoord moet minstens 8 karakters hebben!")]
         public string Password { get; set; }
+
+        
     }
 }
