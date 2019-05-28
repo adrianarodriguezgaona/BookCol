@@ -4,56 +4,59 @@
     Layout = "_AdminLayout";
 }
 
-<div id="adminEditDelete">
+    <div class="adminControl">
+        <h4>Selecteer hotel die je wil wijzigen of verwijderen</h4>
+        <div id="adminEditDelete">
 
-    <h4>Selecteer hotel die je wil wijzigen of verwijderen</h4>
 
-    <form id="AdminStart" asp-controller="Admin" asp-action="Index" method="post">
-        <select asp-for="Id">
 
-            @foreach (var hotel in Model.Hotels)
-            {
-                <option value="@hotel.Id">@hotel.Name</option>
-            }
+            <form id="AdminStart" asp-controller="Admin" asp-action="Index" method="post">
+                <select asp-for="Id">
 
-        </select>
+                    @foreach (var hotel in Model.Hotels)
+                    {
+                        <option value="@hotel.Id">@hotel.Name</option>
+                    }
 
-        <button type="submit" class="btn btn-primary">Selecteer </button>
+                </select>
 
-    </form>
-</div>
+                <button type="submit" class="btn btn-primary">Selecteer </button>
 
-<form asp-action="AddHotel" method="post">
-    <div id="adminAddHotel">
-        <h4>Voeg een nieuw hotel toe</h4>
-        <button type="submit" class="btn btn-primary">Voeg een nieuw hotel toe</button>
+            </form>
+        </div>
+
+        <form asp-action="AddHotel" method="post">
+            <div id="adminAddHotel">
+                <h4>Voeg een nieuw hotel toe</h4>
+                <button type="submit" class="btn btn-primary">Voeg een nieuw hotel toe</button>
+            </div>
+
+
+        </form>
+
+
+
+        <div id="adminAddRooms">
+            <h4>Vul de kamers in een te selecteren hotel</h4>
+
+            <form id="AdminAddHotel" asp-controller="Admin" asp-action="HotelToFill" method="post">
+
+                <select asp-for="@Model.Id">
+                    @foreach (var hotel in @Model.Hotels)
+                    {
+
+                        <option value="@hotel.Id">@hotel.Name</option>
+                    }
+
+                </select>
+
+
+                <button type="submit" class="btn btn-primary">
+                    Selecteer
+                </button>
+            </form>
+
+
+        </div>
+
     </div>
-
-
-</form>
-
-
-
-<div id="adminAddRooms">
-    <h4>Vul de kamers in een te selecteren hotel</h4>
-
-    <form id="AdminAddHotel" asp-controller="Admin" asp-action="HotelToFill" method="post">
-
-        <select asp-for="@Model.Id">
-            @foreach (var hotel in @Model.Hotels)
-            {
-
-                <option value="@hotel.Id">@hotel.Name</option>
-            }
-
-        </select>
-
-
-        <button type="submit" class="btn btn-primary">
-            Selecteer
-        </button>
-    </form>
-
-
-</div>
-

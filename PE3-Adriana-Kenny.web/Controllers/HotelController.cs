@@ -37,7 +37,25 @@ namespace PE3_Adriana_Kenny.web.Controllers
             return View(vm);
         }
 
-        public IActionResult HotelByCity(HotelFilterHotelVM vm)
+        public IActionResult HotelByCity (long id)
+
+        {
+            var vm = new HotelFilterHotelVM();
+
+            vm.Hotels = bookingContext.Hotels
+                .Include(c => c.City)
+                .Where(h => h.CityId == id).ToList();
+
+
+            vm.Cities = bookingContext.Cities.OrderBy(c => c.Name).ToList();
+
+            return View(vm);
+
+        }
+
+
+
+        public IActionResult HotelFilteredCityStar(HotelFilterHotelVM vm)
         {
        var templist = Enumerable.Empty<Hotel>().AsQueryable();
 
@@ -84,7 +102,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
                     vm.Hotels = templist.ToList();
                 }
             
-            return View(vm);
+            return View("HotelByCity", vm);
         }
         public IActionResult HotelDetails(long id)
         {
@@ -104,7 +122,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
         {
             
-            return RedirectToAction("HotelByCity", vm);
+            return RedirectToAction("HotelFilteredCityStar", vm);
         }
 
     }
