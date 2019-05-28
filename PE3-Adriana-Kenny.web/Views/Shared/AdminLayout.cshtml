@@ -1,0 +1,80 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    </environment>
+
+    <link href="https://fonts.googleapis.com/css?family=Fondamento" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+
+    <div class="DivContainer">
+
+        <header>
+
+            <img src="~/images/Icoon/BookCol.png" />
+            <h1>BookCol.com administrator pagina</h1>
+
+            <div class="NavHome">
+
+                <nav>
+                    <ul class="miNav">
+                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-controller="Hotel" asp-action="HotelDiv">Booking</a></li>
+                        <li><a asp-controller="Admin" asp-action="Index">Hotels</a></li>
+
+                    </ul>
+                </nav>
+
+            </div>
+            <div class="NavKlant">
+
+                <nav>
+
+                    <ul class="miNav">
+                       
+                        <li><a asp-controller="Home" asp-action="LoginForm">Uitloggen</a></li>
+
+                    </ul>
+                </nav>
+
+            </div>
+
+        </header>
+        @RenderBody()
+
+        <aside></aside>
+
+        <footer>
+
+            <p>BookCol.com administratie</p>
+
+            <div class="panel-body">&copy; @DateTime.Now.Year </div>
+        </footer>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </environment>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+
+

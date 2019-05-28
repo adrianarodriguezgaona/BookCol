@@ -1,23 +1,26 @@
 ﻿@model AdminIndexVM
 
+@{
+    Layout = "_AdminLayout";
+}
 
 <div id="adminEditDelete">
 
-   <h4>Selecteer hotel die je wil wijzigen of verwijderen</h4>
+    <h4>Selecteer hotel die je wil wijzigen of verwijderen</h4>
 
-   <form id="AdminStart" asp-controller="Admin" asp-action="Index" method="post">
-           <select asp-for="Id">
+    <form id="AdminStart" asp-controller="Admin" asp-action="Index" method="post">
+        <select asp-for="Id">
 
-               @foreach (var hotel in Model.Hotels)
-               {
-                   <option value="@hotel.Id">@hotel.Name</option>
-               }
+            @foreach (var hotel in Model.Hotels)
+            {
+                <option value="@hotel.Id">@hotel.Name</option>
+            }
 
-           </select>
+        </select>
 
-       <button type="submit" class="btn btn-primary">Selecteer </button>
-      
-   </form>
+        <button type="submit" class="btn btn-primary">Selecteer </button>
+
+    </form>
 </div>
 
 <form asp-action="AddHotel" method="post">
@@ -44,7 +47,7 @@
             }
 
         </select>
-    
+
 
         <button type="submit" class="btn btn-primary">
             Selecteer

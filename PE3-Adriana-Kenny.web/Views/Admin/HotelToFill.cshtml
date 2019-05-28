@@ -1,5 +1,9 @@
 ﻿@model AdminIndexVM
 
+@{
+    Layout = "_AdminLayout";
+}
+
 <h1>Voeg Kamers toe</h1>
 
 <h4>Kamers in het @Model.Hotel.Name</h4>
@@ -11,7 +15,7 @@
         <th>Kameromschrijving</th>
         <th>Prijs per Nacht</th>
 
-    </tr>   
+    </tr>
     @foreach (var room in Model.Rooms)
     {
 
@@ -20,15 +24,15 @@
             <td width="800px">@room.Description</td>
             <td>@room.PriceNight</td>
             <td><a asp-action="EditRoom" asp-route-id="@room.Id">Edit</a></td>
-           
-           
-                <td><a href="/Admin/DeleteR/@room.Id">Delete</a></td>
-                
+
+
+            <td><a href="/Admin/DeleteR/@room.Id">Delete</a></td>
+
         </tr>
     }
 
 </table>
 
 <form asp-action="AddRooms" method="get">
-<button value="@Model.Hotel.Id" name="hotelid"  class="btn btn-primary">Voeg kamer toe</button>
-    </form>
+    <button value="@Model.Hotel.Id" name="hotelid" class="btn btn-primary">Voeg kamer toe</button>
+</form>
