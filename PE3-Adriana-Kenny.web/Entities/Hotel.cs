@@ -9,7 +9,7 @@ namespace PE3_Adriana_Kenny.web.Entities
 {
     public class Hotel
     {
-   
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
 
@@ -25,20 +25,21 @@ namespace PE3_Adriana_Kenny.web.Entities
         [MaxLength(250)]
         public string Address { get; set; }
 
-        [Required]  
-        public int NmbrOfRooms{ get; set; }
+        [Required]
+        public int NmbrOfRooms { get; set; }
 
-        
+
         public string Photo { get; set; }
 
         [Required]
         public string Description { get; set; }
 
-        public string Facilities{ get; set; }
+        public string Facilities { get; set; }
 
         public City City { get; set; }
 
         public List<Room> Rooms { get; set; }
+
 
     }
 }
