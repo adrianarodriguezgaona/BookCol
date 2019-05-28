@@ -159,15 +159,18 @@ p {font-size:14px;
 
     }
 
-    .info {text-align:center;
-           padding-left: 5%;
-           margin: 50px 5px;
-    }
+.info {
+    text-align: center;
+    padding-left: 5%;
+    margin: 50px 5px;
+   
+}
 
-    .info p {width:500px;
-             display:inline-block;
-             vertical-align:top;
-             text-align:left;
+    .info p {
+        width: 500px;
+        display: inline-block;
+        vertical-align: top;
+        text-align: left;
     }
 
    

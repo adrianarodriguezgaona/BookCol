@@ -1,9 +1,9 @@
 ﻿@model HotelFilterHotelVM
 
-
+<h3>Filter</h3>
 <form id="FilterHotels" asp-controller="Hotel" asp-action="HotelByCityFilter" method="post">
     <div class="form-group">
-        <label asp-for="CityId">Stad</label><br />
+        <label asp-for="CityId"><strong>Stad</strong></label><br />
 
         @foreach (var city in Model.Cities)
         {
@@ -13,14 +13,16 @@
         
         </div>
 
-        <div class="form-group">
-           
-            <input asp-for="StarsChecked[0]" type="checkbox" /><img src="~/images/sterren/2.jpg" /><br />
-            <input asp-for="StarsChecked[1]" type="checkbox" /><img src="~/images/sterren/3.jpg" /><br />
-            <input asp-for="StarsChecked[2]" type="checkbox" /><img src="~/images/sterren/4.jpg" /><br />
-            <input asp-for="StarsChecked[3]" type="checkbox" /><img src="~/images/sterren/5.jpg" /><br />
+    <div class="form-group">
 
-        </div>
+        <label asp-for="StarsChecked[0]"><strong>Sterren</strong></label><br />
+
+        <input asp-for="StarsChecked[0]" type="checkbox" /><img src="~/images/sterren/2.jpg" /><br />
+        <input asp-for="StarsChecked[1]" type="checkbox" /><img src="~/images/sterren/3.jpg" /><br />
+        <input asp-for="StarsChecked[2]" type="checkbox" /><img src="~/images/sterren/4.jpg" /><br />
+        <input asp-for="StarsChecked[3]" type="checkbox" /><img src="~/images/sterren/5.jpg" /><br />
+
+    </div>
 
 
 
