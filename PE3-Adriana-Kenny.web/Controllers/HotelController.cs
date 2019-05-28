@@ -37,6 +37,8 @@ namespace PE3_Adriana_Kenny.web.Controllers
             return View(vm);
         }
 
+
+
         public IActionResult HotelByCity(HotelFilterHotelVM vm)
         {
        var templist = Enumerable.Empty<Hotel>().AsQueryable();

@@ -10,15 +10,16 @@
     @foreach (var city in Model.Cities)
     {
 
-        <div class="CityCard">
+    <div class="CityCard">
 
-            <img src="~/images/cities/@city.Photo" />
+        <img src="~/images/cities/@city.Photo" />
 
-            <h3>@city.Name</h3>
-            <p>@city.Description</p>
-            <hr />
+        <h3>@city.Name</h3>
+        <a asp-controller="Hotel" asp-action="HotelByCity" asp-route-id="@city.Id">Hotels</a>
+        <p>@city.Description</p>
+        <hr />
 
-        </div>
+    </div>
     }
 </div>
     <div class="info">
