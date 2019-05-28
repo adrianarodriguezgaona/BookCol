@@ -261,4 +261,6 @@ footer div {
 
    .adminControl {text-align:center;}
 
-   .adminControl h4 {text-align:left;}
+   .adminControl h4 {text-align:left;
+                     margin-left: 40px;
+   }
