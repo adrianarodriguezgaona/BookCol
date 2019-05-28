@@ -44,6 +44,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
                 if (userState.IsAdmin)
 
+
                 {
                     
                     vm.Hotels = bookingContext.Hotels.OrderBy(h => h.Name).ToList();
