@@ -46,8 +46,6 @@ namespace PE3_Adriana_Kenny.web.Controllers
                     ClientId = newBookingVM.ClientId,
                     RoomId = newBookingVM.RoomId,
                     NmbrOfPeople = newBookingVM.NmbrOfPeople
-
-
                 };
                 bookingContext.Booking.Add(newBooking);
                 bookingContext.SaveChanges();

@@ -25,9 +25,11 @@ namespace PE3_Adriana_Kenny.web.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CheckInDate");
+                    b.Property<DateTime?>("CheckInDate")
+                        .IsRequired();
 
-                    b.Property<DateTime>("CheckOutDate");
+                    b.Property<DateTime?>("CheckOutDate")
+                        .IsRequired();
 
                     b.Property<long>("ClientId");
 
