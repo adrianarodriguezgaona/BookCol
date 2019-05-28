@@ -128,6 +128,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
                     userState.IsLoggedIn = true;
                     userState.IsAdmin = true;
+                    
                     HttpContext.Session.SetString(Constants.Constants.Statekey, JsonConvert.SerializeObject(userState));
 
 

@@ -12,7 +12,7 @@
 
 
 
-            <form id="AdminStart" asp-controller="Admin" asp-action="Index" method="post">
+            <form id="AdminControlElement" asp-controller="Admin" asp-action="Index" method="post">
                 <select asp-for="Id">
 
                     @foreach (var hotel in Model.Hotels)
@@ -27,7 +27,7 @@
             </form>
         </div>
 
-        <form asp-action="AddHotel" method="post">
+        <form id="AdminControlElement" asp-action="AddHotel" method="post">
             <div id="adminAddHotel">
                 <h4>Voeg een nieuw hotel toe</h4>
                 <hr />
@@ -43,7 +43,7 @@
             <h4>Vul en wijzig de kamers in een te selecteren hotel</h4>
             <hr />
 
-            <form id="AdminAddHotel" asp-controller="Admin" asp-action="HotelToFill" method="post">
+            <form id="AdminControlElement" asp-controller="Admin" asp-action="HotelToFill" method="post">
 
                 <select asp-for="@Model.Id">
                     @foreach (var hotel in @Model.Hotels)
