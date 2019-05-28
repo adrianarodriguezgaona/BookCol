@@ -23,10 +23,8 @@ namespace PE3_Adriana_Kenny.web.Controllers
         {
             var vm = new BookingCreateVM();
 
-            vm.Hotels = bookingContext.Hotels
-                        .Where(h => h.Id == hotelId)
-                        .ToList();
-
+            vm.Hotel = bookingContext.Hotels.Find(hotelId);
+                        
             vm.Rooms = bookingContext.Rooms                     
                      .Where(r => r.HotelId == hotelId)
                      .ToList();
@@ -35,36 +33,50 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Booking newBooking)
+        public ActionResult Create(BookingCreateVM newBookingVM)
 
         {
             if (ModelState.IsValid)
 
             {
+                Booking newBooking = new Booking()
+                {
+                    CheckInDate = newBookingVM.CheckInDate,
+                    CheckOutDate = newBookingVM.CheckOutDate,
+                    ClientId = newBookingVM.ClientId,
+                    RoomId = newBookingVM.RoomId,
+                    NmbrOfPeople = newBookingVM.NmbrOfPeople
+
+
+                };
                 bookingContext.Booking.Add(newBooking);
                 bookingContext.SaveChanges();
 
                 var vm = new BookingCreatePostVM();
 
-                vm.Clients = bookingContext.Clients
-                           .Where(c => c.Id == newBooking.ClientId)
-                           .ToList();
-
-
+                vm.Client = bookingContext.Clients.SingleOrDefault(c => c.Id == newBooking.ClientId);
+                          
                 vm.Bookings = bookingContext.Booking
-                             .Include (b => b.Room)
-                             .Where(b => b.Id == newBooking.Id)                            
+                             .Include(b => b.Room)
+                             .Where(b => b.Id == newBooking.Id)
                              .ToList();
 
-                TimeSpan tspan = newBooking.CheckOutDate - newBooking.CheckInDate;
-                    
-                ViewBag.Days = tspan.Days;
+                TimeSpan? tspan = newBooking.CheckOutDate - newBooking.CheckInDate;
 
-                return View("CreateSuccesfully",vm);
+                ViewBag.Days = tspan?.Days;
+
+                return View("CreateSuccesfully", vm);
             }
 
-            else return View(newBooking);
-
+            else
+            {
+                newBookingVM.Hotel = bookingContext.Hotels.SingleOrDefault(h => h.Id == 1);
+                      
+                newBookingVM.Rooms = bookingContext.Rooms
+                    .Where(r => r.HotelId == 1)
+                    .ToList();
+                return View(newBookingVM);
+            }
 
         }
     }

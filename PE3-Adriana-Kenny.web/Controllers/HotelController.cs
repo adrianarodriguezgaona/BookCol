@@ -53,10 +53,8 @@ namespace PE3_Adriana_Kenny.web.Controllers
         {
             var vm = new HotelHotelDetailsVm();
 
-            vm.Hotels = bookingContext.Hotels
-                        .Where(h => h.Id == id)
-                        .ToList();
-
+            vm.Hotel = bookingContext.Hotels.Find(id);
+                       
             vm.Rooms = bookingContext.Rooms
                      .Include (rt => rt.Roomtype)   
                      .Where(r => r.HotelId == id)
