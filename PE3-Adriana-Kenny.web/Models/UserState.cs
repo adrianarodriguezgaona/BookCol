@@ -10,6 +10,5 @@ namespace PE3_Adriana_Kenny.web.Models
     {
         public bool  IsLoggedIn { get; set; }
         public bool  IsAdmin { get; set; }
-        public Client Client { get; set; }
     }
 }
