@@ -14,10 +14,10 @@ namespace PE3_Adriana_Kenny.web.Entities
         public long Id { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime CheckInDate { get; set; }
+        public DateTime? CheckInDate { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime CheckOutDate { get; set; }
+        public DateTime? CheckOutDate { get; set; }
     
         public long ClientId { get; set; }
         public long RoomId { get; set; }
