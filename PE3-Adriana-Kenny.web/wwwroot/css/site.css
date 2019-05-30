@@ -6,7 +6,7 @@
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 0;
+    padding: 10px 0 ;
     overflow: hidden;
     background-color: #f6fbff;
     font-family: 'Abel', sans-serif;
@@ -157,27 +157,35 @@ p {font-size:17px;
                    border: 1px solid;
     }
 
-    .CityCard h3 {text-align: right;
+    .CityCard h5 {text-align: right;
 
+    }
+    .CityCard a {
+        text-align: right;
     }
 
 .info {
     text-align: center;
-    padding-left: 5%;
+    padding: 10px 5px 10px 5px;
     margin-bottom: 50px;
-    background-color: #ffe477;
+    background-color: #ffe477;  
+    height:auto;
 }
 
-    .info p {width:500px;
-             display:inline-block;
-             vertical-align:top;
-             text-align:left;
+    .info p {
+        margin-bottom: 10px;
+        width: 50%;
+        display: inline-block;
+        /*vertical-align:top;*/
+        text-align: left;
     }
 
-   
-    .info #video {display:inline-block;
-                  margin-left:50px;
+
+    .info #video {
+        display: inline-block;
+        margin: 20px 20px 100px 70px;
     }
+    
 
 footer {
     display: flex;
