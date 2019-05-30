@@ -151,6 +151,20 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
         }
 
+        public IActionResult LogOut()
+        {
+            UserState userState = new UserState();
+            string sessionUser = HttpContext.Session.GetString(Constants.Constants.Statekey);
+
+            if (sessionUser != null)
+
+            {
+                userState.IsLoggedIn = false;
+                HttpContext.Session.SetString(Constants.Constants.Statekey, JsonConvert.SerializeObject(userState));
+            }
+            return RedirectToAction("LoginForm", "Home");
+        }
+
         public IActionResult LogInSuccess()
 
 
