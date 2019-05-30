@@ -26,6 +26,10 @@ namespace PE3_Adriana_Kenny.web.Controllers
             bookingContext = context;
             _env = env;
         }
+        public IActionResult HomeAdmin()
+        {
+            return View();
+        }
 
         public IActionResult Index()
             
