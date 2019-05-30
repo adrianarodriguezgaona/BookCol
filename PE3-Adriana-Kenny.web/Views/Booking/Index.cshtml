@@ -1,0 +1,70 @@
+﻿@model BookingIndexVM
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Bookings.FirstOrDefault().Id)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Bookings.FirstOrDefault().CheckInDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bookings.FirstOrDefault().CheckOutDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bookings.FirstOrDefault().NmbrOfPeople)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bookings.FirstOrDefault().ClientId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bookings.FirstOrDefault().Client.Name)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Bookings.FirstOrDefault().RoomId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Bookings)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckInDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckOutDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NmbrOfPeople)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+         }
+    </tbody>
+</table>
