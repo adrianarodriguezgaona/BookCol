@@ -33,7 +33,7 @@ header {
     border-radius: 5px;
     position: relative;
     height: 200px;
-    margin-bottom: 30px;
+  
 }
 
 header img {
@@ -166,7 +166,7 @@ p {font-size:17px;
 
 .info {
     text-align: center;
-    padding: 10px 5px 10px 5px;
+    padding: 30px 5px 10px 5px;
     margin-bottom: 50px;
     background-color: #ffe477;  
     height:auto;
@@ -198,6 +198,13 @@ footer {
     margin-top: 30px;
     width:100%;
     float:left;
+}
+
+    footer a {  
+        color: #FFF;
+    }
+
+footer a:hover {color:#CCC ;} 
 }
 
 footer div {
