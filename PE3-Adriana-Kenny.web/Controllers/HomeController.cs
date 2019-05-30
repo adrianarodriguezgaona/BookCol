@@ -144,7 +144,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
                     HttpContext.Session.SetString(Constants.Constants.Statekey, JsonConvert.SerializeObject(userState));
 
 
-                    return RedirectToAction("LogInSucces", "Home");
+                    return RedirectToAction("LogInSuccess", "Home");
                 }
             }
             return RedirectToAction("LogInFail", "Home");
