@@ -11,7 +11,7 @@ using PE3_Adriana_Kenny.web.Models;
 namespace PE3_Adriana_Kenny.web.Components
 {
     [ViewComponent(Name = "NavHeader")]
-    public class NavHeaderComponent : ViewComponent
+    public class NavHeaderComponent : ViewComponent 
     {
         private BookingContext bookingContext;
 
@@ -20,13 +20,16 @@ namespace PE3_Adriana_Kenny.web.Components
             bookingContext = context;
         }
         public async Task<IViewComponentResult> InvokeAsync()
+
         {
             return View();
 
+        }
+           
 
 
 
         }
     }
-    }
+    
 

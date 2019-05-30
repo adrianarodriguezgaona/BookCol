@@ -13,7 +13,7 @@
 <h4>Room</h4>
 <hr />
 
-<form asp-action="AddRooms" method="post">
+<form id="bookColForm" asp-action="AddRooms" method="post">
 
 
 
@@ -21,7 +21,7 @@
         <input asp-for="HotelId" type="hidden" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="RoomTypeId"></label>
+        <label asp-for="RoomTypeId">Kamer type id</label>
 
         <select asp-for="RoomTypeId">
             @foreach (var type in @Model.Roomtypes)
@@ -33,11 +33,11 @@
         </select>
     </div>
     <div class="form-group">
-        <label asp-for="Description"></label>
+        <label asp-for="Description">Beschrijving</label>
         <input asp-for="Description" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="PriceNight"></label>
+        <label asp-for="PriceNight">Prijs per nachtw²</label>
         <input asp-for="PriceNight" class="form-control" />
         <span asp-validation-for="PriceNight" class="text-danger"></span>
     </div>
