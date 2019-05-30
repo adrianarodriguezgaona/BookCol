@@ -40,7 +40,11 @@ namespace PE3_Adriana_Kenny.web
 
             services.AddMemoryCache();
             services.AddSession(options =>
-            { options.Cookie.IsEssential = true; });
+            { options.Cookie.IsEssential = true;
+              options.Cookie.SameSite = SameSiteMode.Strict;
+              options.Cookie.HttpOnly = true;
+              options.IdleTimeout = TimeSpan.FromMinutes(10);  
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
