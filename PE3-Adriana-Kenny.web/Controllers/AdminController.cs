@@ -17,7 +17,6 @@ namespace PE3_Adriana_Kenny.web.Controllers
     public class AdminController : Controller
     {
 
-
         private BookingContext bookingContext;
         private readonly IHostingEnvironment _env;
 
@@ -26,28 +25,43 @@ namespace PE3_Adriana_Kenny.web.Controllers
             bookingContext = context;
             _env = env;
         }
+
+
         public IActionResult HomeAdmin()
-        {
-            return View();
+        {   
+           string sessionUser = HttpContext.Session.GetString(Constants.Constants.Statekey);
+            if (sessionUser == null)
+            {
+                return RedirectToAction("LoginForm", "Home");
+            }
+
+         var userState = JsonConvert.DeserializeObject<UserState>(sessionUser);
+
+            if (userState.IsLoggedIn && userState.IsAdmin)
+            {
+                return View();
+            }
+
+            return RedirectToAction("LoginForm", "Home");
+
         }
 
         public IActionResult Index()
             
         {
-            var SessionUser = HttpContext.Session.GetString(Constants.Constants.Statekey);
+            var sessionUser = HttpContext.Session.GetString(Constants.Constants.Statekey);
 
-            if (SessionUser == null)
+            if (sessionUser == null)
 
             { return RedirectToAction("LoginForm", "Home"); }
 
             else
             {
 
-                var userState = JsonConvert.DeserializeObject<UserState>(SessionUser);
+                var userState = JsonConvert.DeserializeObject<UserState>(sessionUser);
                 var vm = new AdminIndexVM();
 
                 if (userState.IsAdmin)
-
 
                 {
                     

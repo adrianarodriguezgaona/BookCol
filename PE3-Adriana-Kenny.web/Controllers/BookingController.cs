@@ -8,6 +8,10 @@ using PE3_Adriana_Kenny.web.Data;
 using PE3_Adriana_Kenny.web.Entities;
 using PE3_Adriana_Kenny.web.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Newtonsoft.Json;
+using Microsoft.AspNetCore.Http;
+using PE3_Adriana_Kenny.web.Constants;
+
 
 namespace PE3_Adriana_Kenny.web.Controllers
 {
@@ -22,30 +26,58 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var vm = new BookingIndexVM
+            string sessionUser = HttpContext.Session.GetString(Constants.Constants.Statekey);
+            if (sessionUser == null)
             {
-                Bookings = await bookingContext.Booking
-                          .Include(c => c.Client)
-                          .OrderBy(b => b.Id)
-                          .ToListAsync()
-            };
+                return RedirectToAction("LoginForm", "Home");
+            }
 
-            return View(vm);
+            var userState = JsonConvert.DeserializeObject<UserState>(sessionUser);
 
+            if (userState.IsLoggedIn && userState.IsAdmin)
+            {
+                var vm = new BookingIndexVM
+                {
+                    Bookings = await bookingContext.Booking
+                        .Include(c => c.Client)
+                        .OrderBy(b => b.Id)
+                        .ToListAsync()
+                };
 
+                return View(vm);
+            }
+
+            return RedirectToAction("LoginForm", "Home");
+       
         }
 
         public IActionResult Create(long hotelId)
-        {
-            var vm = new BookingCreateVM();
 
-            vm.Hotel = bookingContext.Hotels.Find(hotelId);
-                        
-            vm.Rooms = bookingContext.Rooms                     
-                     .Where(r => r.HotelId == hotelId)
-                     .ToList();
-                       return View(vm);           
+        {
+            string sessionUser = HttpContext.Session.GetString(Constants.Constants.Statekey);
+            if (sessionUser == null)
+            {
+                return RedirectToAction("LoginForm", "Home");
+            }
+
+            var userState = JsonConvert.DeserializeObject<UserState>(sessionUser);
+
+            if (userState.IsLoggedIn)
+            {
+                var vm = new BookingCreateVM();
+
+                vm.Hotel = bookingContext.Hotels.Find(hotelId);
+
+                vm.Rooms = bookingContext.Rooms
+                         .Where(r => r.HotelId == hotelId)
+                         .ToList();
+                return View(vm);
+            }
+
+            return RedirectToAction("LoginForm", "Home");
         }
+                
+        
 
         [HttpPost]
         [ValidateAntiForgeryToken]

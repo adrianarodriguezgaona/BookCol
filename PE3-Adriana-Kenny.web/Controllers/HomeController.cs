@@ -56,8 +56,8 @@ namespace PE3_Adriana_Kenny.web.Controllers
             {
 
                 MD5 hash = MD5.Create();
-                var UserPassword = System.Text.Encoding.ASCII.GetBytes(client.Password);
-                var hashBytes = hash.ComputeHash(UserPassword);
+                var userPassword = System.Text.Encoding.ASCII.GetBytes(client.Password);
+                var hashBytes = hash.ComputeHash(userPassword);
 
                 StringBuilder hashString = new StringBuilder();
 
@@ -100,8 +100,8 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
             {
                 MD5 hash = MD5.Create();
-                var UserPassword = System.Text.Encoding.ASCII.GetBytes(login.Password);
-                var hashBytes = hash.ComputeHash(UserPassword);
+                var userPassword = System.Text.Encoding.ASCII.GetBytes(login.Password);
+                var hashBytes = hash.ComputeHash(userPassword);
 
                 StringBuilder hashString = new StringBuilder();
 
@@ -146,12 +146,8 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
                     return RedirectToAction("LogInSucces", "Home");
                 }
-
             }
-
-
             return RedirectToAction("LogInFail", "Home");
-
 
         }
 
