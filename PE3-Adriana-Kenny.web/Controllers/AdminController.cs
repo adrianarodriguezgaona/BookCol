@@ -172,7 +172,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
 
         {
-            var vm = new EditRoomsVM();
+            var vm = new AdminEditRoomsVM();
             vm.HotelId = Convert.ToInt64(hotelId);
             vm.Roomtypes = bookingContext.Roomtypes.OrderBy(t => t.Type).ToList();
 
@@ -183,7 +183,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
         [HttpPost]
 
-        public IActionResult AddRooms(EditRoomsVM room)
+        public IActionResult AddRooms(AdminEditRoomsVM room)
 
         {
 
@@ -206,7 +206,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
         public IActionResult EditRoom(long id)
         {
-            var vm = new EditRoomsVM();
+            var vm = new AdminEditRoomsVM();
 
             vm.Room = bookingContext.Rooms.Find(id);
             vm.Roomtypes = bookingContext.Roomtypes.OrderBy(r => r.Type).ToList();
@@ -218,7 +218,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
         [HttpPost]
 
-        public IActionResult EditRoom(EditRoomsVM editedRoom)
+        public IActionResult EditRoom(AdminEditRoomsVM editedRoom)
 
         {
 
