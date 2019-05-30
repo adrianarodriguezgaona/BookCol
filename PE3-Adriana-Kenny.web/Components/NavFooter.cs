@@ -17,7 +17,7 @@ namespace PE3_Adriana_Kenny.web.Components
         {
             bookingContext = context;
         }
-        public async Task<IViewComponentResult> InvokeAsync()
+        public IViewComponentResult Invoke()
         {
             var vm = new HomeIndexVM();
 
