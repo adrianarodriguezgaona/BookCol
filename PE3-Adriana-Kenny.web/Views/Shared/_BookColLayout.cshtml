@@ -1,6 +1,9 @@
-﻿<!DOCTYPE html>
+﻿
+
+<!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
@@ -18,7 +21,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    
+
     <div class="DivContainer">
 
         <header>
@@ -32,7 +35,7 @@
                     <ul class="miNav">
                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                         <li><a asp-controller="Hotel" asp-action="HotelDiv">Hotels</a></li>
-                       
+
 
                     </ul>
                 </nav>
@@ -41,9 +44,9 @@
             <div class="NavKlant">
 
                 <nav>
-                    <vc:nav-header></vc:nav-header>
-
                    
+                        <vc:nav-header></vc:nav-header>
+                    
                 </nav>
 
             </div>
@@ -56,16 +59,22 @@
         <footer>
 
             <div>
-                <p>Neem contact met ons</p>
+                <h4>BookCol.com </h4>
+                <dl>
+                    <dt>Contact</dt>
+                    <dd>Molenaarsstraat 35 8200 Sint-Andries</dd>
+                    <dd>Tel. 0472 22 22 22 </dd>
+                    <dd>info@bookCol.com</dd>
+                </dl>
             </div>
             <div>
-                <p>Over ons</p>
+                <p><a asp-controller="Home" asp-action="About">Over ons</a></p>
             </div>
             <div>
                 <vc:nav-footer></vc:nav-footer>
             </div>
             <p><a asp-controller="Admin" asp-action="HomeAdmin">Admin page</a></p>
-            <div class="panel-body">&copy; @DateTime.Now.Year </div>
+            <div class="panel-body"> Adriana - Kenny &copy; @DateTime.Now.Year </div>
         </footer>
     </div>
 

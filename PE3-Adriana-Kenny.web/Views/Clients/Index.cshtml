@@ -1,0 +1,82 @@
+﻿@model ClientsIndexVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@{
+    Layout = "_AdminLayout";
+}
+
+
+<h1>Klanten</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Clients.FirstOrDefault().Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clients.FirstOrDefault().Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clients.FirstOrDefault().Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clients.FirstOrDefault().ZipCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clients.FirstOrDefault().Community)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clients.FirstOrDefault().Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clients.FirstOrDefault().Email)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Clients.FirstOrDefault().IsAdmin)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Clients)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZipCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Community)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsAdmin)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Wijzigen</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Verwijderen</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
