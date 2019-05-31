@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PE3_Adriana_Kenny.web.Models
 {
-    public class EditRoomsVM : Room
+    public class AdminEditRoomsVM : Room
     {
 
         public List<Roomtype> Roomtypes { get; set; }
