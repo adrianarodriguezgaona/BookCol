@@ -7,7 +7,7 @@
 
         @foreach (var city in Model.Cities)
         {
-            <input asp-for="@city.Id" type="radio" value="@city.Id" name="CityId" class="form-control check" />@city.Name
+            <input asp-for="@Model.CityId" type="radio" value="@city.Id" name="CityId"  class="form-control check" />@city.Name 
             <br />
         }
         
