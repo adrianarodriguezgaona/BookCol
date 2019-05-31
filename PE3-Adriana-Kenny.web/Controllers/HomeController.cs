@@ -178,5 +178,10 @@ namespace PE3_Adriana_Kenny.web.Controllers
         {
             return View();
         }
+
+        public IActionResult About()
+        {
+            return View();
+        }
     }
 }

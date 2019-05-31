@@ -127,30 +127,47 @@ namespace PE3_Adriana_Kenny.web.Controllers
         }
 
         public async Task<IActionResult> Edit (long? id)
+
         {
-            if (id == null)
+
+            string sessionUser = HttpContext.Session.GetString(Constants.Constants.Statekey);
+            if (sessionUser == null)
             {
-                return NotFound();
+                return RedirectToAction("LoginForm", "Home");
             }
-            var booking = await bookingContext.Booking.SingleOrDefaultAsync(b => b.Id == id);
-            if (booking == null)
+
+            var userState = JsonConvert.DeserializeObject<UserState>(sessionUser);
+
+            if (userState.IsLoggedIn && userState.IsAdmin)
             {
+
+                if (id == null)
+                {
                 return NotFound();
-            }
-            var vm = new BookingEditVM
-            {
+                }
+                var booking = await bookingContext.Booking.SingleOrDefaultAsync(b => b.Id == id);
+                if (booking == null)
+                {
+                return NotFound();
+                }
+                var vm = new BookingEditVM
+                {
                 Id = booking.Id,
                 ClientId = booking.ClientId,
                 CheckInDate = booking.CheckInDate,
                 CheckOutDate = booking.CheckOutDate,
                 RoomId = booking.RoomId,
                 NmbrOfPeople = booking.NmbrOfPeople
-            };
+                };
             
-            vm.Rooms = await bookingContext.Rooms
+                vm.Rooms = await bookingContext.Rooms
                      .OrderBy(r => r.Id).ToListAsync();
 
-            return View(vm);
+                return View(vm);
+            }
+
+            return RedirectToAction("LoginForm", "Home");
+
         }
 
         [HttpPost]
@@ -195,47 +212,78 @@ namespace PE3_Adriana_Kenny.web.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(editVm);
-        }
+     
+
+    }
 
         public async Task<IActionResult> Details(long? id)
         {
-            if (id == null)
+            string sessionUser = HttpContext.Session.GetString(Constants.Constants.Statekey);
+            if (sessionUser == null)
             {
-                return NotFound();
+                return RedirectToAction("LoginForm", "Home");
             }
 
-            var booking = await bookingContext.Booking
-                 .Include(b => b.Client)
-                 .Include(b => b.Room)
-                 .FirstOrDefaultAsync(m => m.Id == id);
+            var userState = JsonConvert.DeserializeObject<UserState>(sessionUser);
 
-            if (booking == null)
+            if (userState.IsLoggedIn && userState.IsAdmin)
             {
-                return NotFound();
+
+                if (id == null)
+                {
+                    return NotFound();
+                }
+
+                var booking = await bookingContext.Booking
+                             .Include(b => b.Client)
+                             .Include(b => b.Room)
+                             .FirstOrDefaultAsync(m => m.Id == id);
+
+                if (booking == null)
+                {
+                    return NotFound();
+                }
+
+
+                return View(booking);
             }
 
-
-            return View(booking);
+            return RedirectToAction("LoginForm", "Home");
         }
 
-        public async Task<IActionResult> Delete(long? id)
+
+            public async Task<IActionResult> Delete(long? id)
         {
-            if (id == null)
+            string sessionUser = HttpContext.Session.GetString(Constants.Constants.Statekey);
+            if (sessionUser == null)
             {
-                return NotFound();
+                return RedirectToAction("LoginForm", "Home");
             }
 
-            var booking = await bookingContext.Booking
-                .Include(b => b.Client)
-                .Include(b => b.Room)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (booking == null)
-            {
-                return NotFound();
-            }
+            var userState = JsonConvert.DeserializeObject<UserState>(sessionUser);
 
-            return View(booking);
-        }
+            if (userState.IsLoggedIn && userState.IsAdmin)
+            {
+
+                if (id == null)
+                {
+                   return NotFound();
+                }
+
+                var booking = await bookingContext.Booking
+                             .Include(b => b.Client)
+                             .Include(b => b.Room)
+                             .FirstOrDefaultAsync(m => m.Id == id);
+                if (booking == null)
+                {
+                   return NotFound();
+                }
+
+                   return View(booking);
+                }
+
+                return RedirectToAction("LoginForm", "Home");
+            }
 
         // POST: Bookings/Delete
         [HttpPost, ActionName("Delete")]
