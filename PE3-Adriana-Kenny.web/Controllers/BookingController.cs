@@ -184,6 +184,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
                 {
                     Booking updatedBooking = new Booking
                     {
+                        Id= editVm.Id,
                         CheckInDate = editVm.CheckInDate,
                         CheckOutDate = editVm.CheckOutDate,
                         NmbrOfPeople = editVm.NmbrOfPeople,
