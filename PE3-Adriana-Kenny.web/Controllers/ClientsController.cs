@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -122,6 +124,21 @@ namespace PE3_Adriana_Kenny.web.Controllers
             {
                 try
                 {
+                    MD5 hash = MD5.Create();
+                    var userPassword = System.Text.Encoding.ASCII.GetBytes(editClient.Password);
+                    var hashBytes = hash.ComputeHash(userPassword);
+
+                    StringBuilder hashString = new StringBuilder();
+
+
+                    for (int i = 0; i < hashBytes.Length; i++)
+                    {
+                        hashString.Append(hashBytes[i].ToString("x2"));
+                    }
+
+                    editClient.Password = hashString.ToString();
+                    editClient.RepeatPassword = editClient.Password;
+
                     Client updatedClient = new Client
                     {
                         Id = editClient.Id,
