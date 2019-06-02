@@ -17,7 +17,7 @@
 
                     @foreach (var hotel in Model.Hotels)
                     {
-                        <option value="@hotel.Id">@hotel.Name</option>
+                        <option  value="@hotel.Id">@hotel.Name</option>
                     }
 
                 </select>
@@ -27,7 +27,7 @@
             </form>
         </div>
 
-        <form id="AdminControlElement" asp-action="AddHotel" method="post">
+        <form id="AdminControlElement" asp-action="HotelNew" method="get">
             <div id="adminAddHotel">
                 <h4>Voeg een nieuw hotel toe</h4>
                 <hr />

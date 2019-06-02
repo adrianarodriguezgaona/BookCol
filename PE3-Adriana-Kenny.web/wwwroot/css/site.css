@@ -300,6 +300,11 @@ footer div {
                      margin-left: 10px;
    }
 
-#AdminControlElement {margin-left: 50px;}   
+#AdminControlElement {margin-left: 50px;}
 
-.alert { margin-top: 30px;}
+.alert {
+    margin-top: 30px;
+}
+
+.btn-primary{
+    background-color: #9e614b;

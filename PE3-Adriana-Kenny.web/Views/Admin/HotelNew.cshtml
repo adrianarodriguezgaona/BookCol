@@ -12,16 +12,10 @@
 
     <input asp-for="Id" type="hidden" />
 
-
     <div class="form-group">
+        <label asp-for="CityId">Naam</label>
+        <input asp-for="CityId" class="form-control">
 
-        <select asp-for="CityId">
-            @foreach (var city in Model.CityList)
-            {
-                <option value="@city.Id">@city.Name</option>
-            }
-
-        </select>
 
     </div>
 

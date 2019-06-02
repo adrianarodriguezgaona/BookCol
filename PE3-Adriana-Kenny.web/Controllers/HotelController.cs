@@ -45,6 +45,7 @@ namespace PE3_Adriana_Kenny.web.Controllers
             vm.Hotels = bookingContext.Hotels
                 .Include(c => c.City)
                 .Where(h => h.CityId == id).ToList();
+            vm.CityId = id;
 
 
             vm.Cities = bookingContext.Cities.OrderBy(c => c.Name).ToList();
