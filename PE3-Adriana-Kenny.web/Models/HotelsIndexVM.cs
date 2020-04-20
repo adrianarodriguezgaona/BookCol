@@ -6,11 +6,9 @@ using PE3_Adriana_Kenny.web.Entities;
 
 namespace PE3_Adriana_Kenny.web.Models
 {
-    public class BookingEditVM : BookingCreateVM
+    public class HotelsIndexVM
     {
-        public long Id { get; set; }
-        public List<Client> Clients { get; set; }
-        public Booking Booking { get; set; }
-
-    }
+        public IEnumerable<Hotel> Hotels { get; set; }
+       
+    }  
 }
