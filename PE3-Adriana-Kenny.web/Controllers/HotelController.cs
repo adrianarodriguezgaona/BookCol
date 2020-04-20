@@ -58,51 +58,70 @@ namespace PE3_Adriana_Kenny.web.Controllers
 
         public IActionResult HotelFilteredCityStar(HotelFilterHotelVM vm)
         {
-       var templist = Enumerable.Empty<Hotel>().AsQueryable();
+       //var templist = Enumerable.Empty<Hotel>().AsQueryable();
 
-            var filteredHotels = bookingContext.Hotels.Where(h => h.CityId == vm.CityId);
+            var hotelsBycity = bookingContext.Hotels.Where(h => h.CityId == vm.CityId ).ToList();
 
-            
-            if (vm.StarsChecked[0] == true && filteredHotels.Where(h => h.Stars == 2) != null)
+            var hotelsByStar = bookingContext.Hotels.Where(h => h.Stars == vm.AmountStars).ToList();
 
+            if (hotelsBycity.Count != 0 && hotelsByStar.Count == 0)
             {
-               templist = templist.Concat(filteredHotels.Where(h => h.Stars == 2));
-
+                vm.Hotels = bookingContext.Hotels.Where(h => h.CityId == vm.CityId).ToList();
             }
 
-            if (vm.StarsChecked[1] == true && filteredHotels.Where(h => h.Stars == 3) != null)
+            if (hotelsBycity.Count != 0 && hotelsByStar.Count != 0)
 
             {
-                templist = templist.Concat(filteredHotels.Where(h => h.Stars == 3));
+                vm.Hotels = bookingContext.Hotels.Where(h => h.CityId == vm.CityId &&  h.Stars == vm.AmountStars).ToList();
             }
 
-            if (vm.StarsChecked[2] == true && filteredHotels.Where(h => h.Stars == 4) != null)
+            if (hotelsBycity.Count == 0 && hotelsByStar.Count != 0)
 
             {
-            templist = templist.Concat(filteredHotels.Where(h => h.Stars == 4));
+                vm.Hotels = bookingContext.Hotels.Where(h => h.Stars == vm.AmountStars).ToList();
             }
 
-                    if (vm.StarsChecked[3] == true && filteredHotels.Where(h => h.Stars == 5) != null)
+            //if (vm.StarsChecked[0] == true && filteredHotels.Where(h => h.Stars == 2) != null)
 
-                    {
-                      templist =   templist.Concat(filteredHotels.Where(h => h.Stars == 5));
-                    }
+            //{
+            //   templist = templist.Concat(filteredHotels.Where(h => h.Stars == 2));
 
-            var finallist = templist.ToList();
+            //}
 
-                vm.Cities = bookingContext.Cities
-                                .OrderBy(c => c.Name)
-                                .ToList();
+            //if (vm.StarsChecked[1] == true && filteredHotels.Where(h => h.Stars == 3) != null)
 
-                if (finallist.Count == 0)
+            //{
+            //    templist = templist.Concat(filteredHotels.Where(h => h.Stars == 3));
+            //}
 
-                { vm.Hotels = filteredHotels.ToList(); }
+            //if (vm.StarsChecked[2] == true && filteredHotels.Where(h => h.Stars == 4) != null)
 
-                else
-                {
-                    vm.Hotels = templist.ToList();
-                }
-            
+            //{
+            //templist = templist.Concat(filteredHotels.Where(h => h.Stars == 4));
+            //}
+
+            //        if (vm.StarsChecked[3] == true && filteredHotels.Where(h => h.Stars == 5) != null)
+
+            //        {
+            //          templist =   templist.Concat(filteredHotels.Where(h => h.Stars == 5));
+            //        }
+
+            //var finallist = templist.ToList();
+
+            vm.Cities = bookingContext.Cities
+                        //.Where (c => c.Id == vm.CityId)
+                        .OrderBy(c => c.Name)
+                        .ToList();
+
+            //if (finallist.Count == 0)
+
+            //{ vm.Hotels = filteredHotels.ToList(); }
+
+            //else
+            //{
+            //    vm.Hotels = templist.ToList();
+            //}
+
             return View("HotelByCity", vm);
         }
         public IActionResult HotelDetails(long id)
