@@ -12,6 +12,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PE3_Adriana_Kenny.web.Data;
+using PE3_Adriana_Kenny.web.Entities;
+using PE3_Adriana_Kenny.web.Services;
 
 namespace PE3_Adriana_Kenny.web
 {
@@ -37,6 +39,9 @@ namespace PE3_Adriana_Kenny.web
             services.AddDbContext<BookingContext>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("BookingDb")));
 
+            services.AddTransient<IRepository<Hotel, long>, EfRepository<Hotel, long>>();
+            services.AddTransient<IRepository<Room, long>, EfRepository<Room, long>>();
+            services.AddTransient<IRepository<City, long>, EfRepository<City, long>>();
 
             services.AddMemoryCache();
             services.AddSession(options =>
