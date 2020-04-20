@@ -1,0 +1,88 @@
+﻿@model HotelsIndexVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Hotels.FirstOrDefault().Id)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Hotels.FirstOrDefault().Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hotels.FirstOrDefault().Stars)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Hotels.FirstOrDefault().NmbrOfRooms)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Hotels.FirstOrDefault().Description)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Hotels.FirstOrDefault().City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hotels.FirstOrDefault().Photo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Hotels) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stars)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NmbrOfRooms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.City.Name)
+            </td>
+            <td>
+                @{ 
+                    string imageUrl = item.Photo != null ?
+                        "hotels/" + item.Photo : "default-hotel.png";
+                }
+                <div style="height:100px;width:100px;
+                  background-image:url('/images/@imageUrl');
+                  background-size: cover;"></div>
+            </td>
+            <td style="white-space:nowrap">
+                <a asp-action="Edit" asp-route-id="@item.Id">
+                    <i class="fas fa-edit"></i>&nbsp;Edit
+                </a><br />
+                <a asp-action="Details" asp-route-id="@item.Id">
+                    <i class="fas fa-search"></i>&nbsp;Details
+                </a><br />
+                <a asp-action="Delete" asp-route-id="@item.Id">
+                         <i class="fas fa-trash"></i>&nbsp;Delete
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
