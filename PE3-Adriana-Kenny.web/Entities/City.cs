@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 
 namespace PE3_Adriana_Kenny.web.Entities
 {
-    public class City
+    public class City :BaseEntity <long>
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-
-        public long Id { get; set; }
+      
         public string Name { get; set; }
 
         [Required]

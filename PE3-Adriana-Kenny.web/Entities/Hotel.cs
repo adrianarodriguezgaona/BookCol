@@ -7,31 +7,27 @@ using System.Threading.Tasks;
 
 namespace PE3_Adriana_Kenny.web.Entities
 {
-    public class Hotel
+    public class Hotel : BaseEntity<long>
     {
-
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long Id { get; set; }
-
+       
         public long? CityId { get; set; }
 
-        [Required]
+       
         public string Name { get; set; }
 
-        [Required]
+       
         public int Stars { get; set; }
 
-        [Required]
-        [MaxLength(250)]
+       
         public string Address { get; set; }
 
-        [Required]
+        
         public int NmbrOfRooms { get; set; }
 
 
         public string Photo { get; set; }
 
-        [Required]
+       
         public string Description { get; set; }
 
         public string Facilities { get; set; }

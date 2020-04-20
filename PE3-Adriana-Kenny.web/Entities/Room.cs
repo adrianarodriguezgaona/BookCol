@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace PE3_Adriana_Kenny.web.Entities
 {
-    public class Room {     
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long Id { get; set; }
-
+    public class Room : BaseEntity <long>
+    {     
+       
         public long HotelId { get; set; }
         
         public long RoomTypeId { get; set; }
